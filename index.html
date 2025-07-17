@@ -1,131 +1,110 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>মিল্টন ইলেকট্রনিক্স</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Hind Siliguri', sans-serif;
-      background-color: #e0f0ff;
+      margin: 0; padding: 0;
+      background-color: #e0f7ff;
       color: #003366;
-      margin: 0;
-      padding: 0;
     }
     header {
       background-color: #007acc;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 40px 20px;
     }
-    nav {
-      background-color: #005999;
-      padding: 10px;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 10px;
-      font-size: 1.1em;
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1.2em;
     }
     .products {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
       padding: 20px;
+      flex-wrap: wrap;
     }
     .product {
       background-color: white;
-      margin: 15px;
-      padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 250px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      width: 180px;
       text-align: center;
-      transition: transform 0.3s;
-    }
-    .product:hover {
-      transform: scale(1.05);
     }
     .product img {
       width: 100%;
-      height: auto;
       border-radius: 10px;
     }
     .product h2 {
-      margin-top: 10px;
+      margin: 15px 0 5px 0;
       font-size: 1.2em;
     }
+    .product p {
+      margin: 0;
+      font-weight: bold;
+      color: #007acc;
+    }
     footer {
-      background-color: #007acc;
+      background-color: #003366;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+    .social-links a {
+      color: white;
+      margin: 0 12px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      color: #ffcc00;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>মিল্টন ইলেকট্রনিক্স</h1>
     <p>বিশ্বাস ও মানের প্রতীক</p>
   </header>
 
-  <nav>
-    <a href="#">হোম</a>
-    <a href="#">পণ্যসমূহ</a>
-    <a href="https://facebook.com/miltonshop" target="_blank">ফেসবুক পেজ</a>
-  </nav>
-
   <section class="products">
-
     <div class="product">
-      <a href="fan.html">
-        <img src="fan.jpg" alt="টেবিল ফ্যান">
-        <h2>টেবিল ফ্যান</h2>
-      </a>
-      <p>দাম: ১২৫০ টাকা</p>
+      <img src="fan.jpg" alt="টেবিল ফ্যান" />
+      <h2>টেবিল ফ্যান</h2>
+      <p>১২৫০ টাকা</p>
     </div>
-
     <div class="product">
-      <a href="light.html">
-        <img src="light.jpg" alt="LED লাইট">
-        <h2>LED লাইট</h2>
-      </a>
-      <p>দাম: ১৯০ টাকা</p>
+      <img src="light.jpg" alt="LED লাইট" />
+      <h2>LED লাইট</h2>
+      <p>১৯০ টাকা</p>
     </div>
-
     <div class="product">
-      <a href="adapter.html">
-        <img src="adapter.jpg" alt="১২V অ্যাডাপ্টার">
-        <h2>১২V অ্যাডাপ্টার</h2>
-      </a>
-      <p>দাম: ৩৫০ টাকা</p>
+      <img src="adapter.jpg" alt="অ্যাডাপ্টার" />
+      <h2>১২V অ্যাডাপ্টার</h2>
+      <p>৩৫০ টাকা</p>
     </div>
-
   </section>
 
   <footer>
-    © ২০২৫ মিল্টন ইলেকট্রনিক্স | তৈরি করেছেন ❤️ মিলে তোমার জন্য
-<footer style="background-color: #003366; color: white; text-align: center; padding: 20px;">
-  <p>© ২০২৫ Milton Electronics | Developed with ❤️</p>
-  
-  <!-- সোশ্যাল মিডিয়া আইকন -->
-  <div style="margin-top: 10px;">
-    <a href="https://facebook.com/yourusername" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
-    </a>
-    <a href="https://youtube.com/@yourchannel" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube">
-    </a>
-    <a href="https://twitter.com/yourusername" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter">
-    </a>
-    <a href="mailto:youremail@gmail.com" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Gmail">
-    </a>
-  </div>
-</footer>
+    <p>© ২০২৫ মিল্টন ইলেকট্রনিক্স | Developed with ❤️</p>
+    <div class="social-links">
+      <a href="mailto:miltonbuslover@gmail.com" title="Gmail" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://facebook.com/yourusername" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://youtube.com/@yourchannel" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/yourusername" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
