@@ -1,52 +1,74 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
   <title>মিল্টন ইলেকট্রনিক্স</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Hind Siliguri', sans-serif;
-      background-color: #e0f0ff;
-      color: #003366;
+      background-color: #e6f2ff;
       margin: 0;
       padding: 0;
     }
-    header, footer {
-      background-color: #007acc;
+    header {
+      background-color: #003366;
+      padding: 20px;
       color: white;
       text-align: center;
-      padding: 15px;
     }
     nav {
-      background-color: #005999;
+      background-color: #0059b3;
       text-align: center;
       padding: 10px;
     }
     nav a {
       color: white;
-      margin: 10px;
+      margin: 0 15px;
       text-decoration: none;
-      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>মিল্টন ইলেকট্রনিক্স</h1>
-  <p>বিশ্বাস ও মানের প্রতীক</p>
-</header>
+  <header>
+    <h1>মিল্টন ইলেকট্রনিক্স</h1>
+  </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="category.html">Category</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="category.html">ক্যাটাগরি</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
 
-<footer>
-  © ২০২৫ মিল্টন ইলেকট্রনিক্স | তৈরি করেছেন ❤️ মিলে তোমার জন্য
-</footer>
+  <section>
+    <h2>স্বাগতম!</h2>
+    <p>আমাদের ইলেকট্রনিক্স দোকানে সকল প্রকার ফ্যান, লাইট, ফ্রিজ পাওয়া যায়।</p>
+  </section>
+
+  <section id="contact">
+    <h2>📞 যোগাযোগ করুন</h2>
+    <p>ইমেইল: milton@example.com</p>
+    <p>ফোন: ০১৭xxxxxxxx</p>
+  </section>
+
+  <footer>
+    <p>&copy; ২০২৫ মিল্টন ইলেকট্রনিক্স</p>
+  </footer>
 
 </body>
 </html>
