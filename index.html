@@ -1,10 +1,9 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>মিল্টন ইলেকট্রনিক্স</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Hind Siliguri', sans-serif;
@@ -13,186 +12,41 @@
       margin: 0;
       padding: 0;
     }
-    header {
+    header, footer {
       background-color: #007acc;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 15px;
     }
     nav {
       background-color: #005999;
-      padding: 10px;
       text-align: center;
+      padding: 10px;
     }
     nav a {
       color: white;
-      text-decoration: none;
       margin: 10px;
-      font-size: 1.1em;
-    }
-    /* মূল স্টাইল */
-    .category-section {
-      padding: 40px 20px;
-      background-color: #f9f9f9;
-      text-align: center;
-    }
-    .category-section h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #1a237e;
-    }
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-    }
-    .category-box {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .category-box img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .category-box h3 {
-      margin: 10px 0 8px;
-      font-size: 22px;
-      color: #222;
-    }
-    .category-box p {
-      margin: 6px 0;
-      font-size: 16px;
-      color: #555;
-    }
-    .category-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .product {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 250px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .product:hover {
-      transform: scale(1.05);
-    }
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .product h2 {
+      text-decoration: none;
       font-size: 18px;
-      margin: 10px 0 5px;
-    }
-    .product p {
-      font-size: 16px;
-      color: #444;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Home সেকশন -->
-  <section id="home">
-    <header>
-      <h1>মিল্টন ইলেকট্রনিক্স</h1>
-      <p>বিশ্বাস ও মানের প্রতীক</p>
-    </header>
-  </section>
+<header>
+  <h1>মিল্টন ইলেকট্রনিক্স</h1>
+  <p>বিশ্বাস ও মানের প্রতীক</p>
+</header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="category.html">Category</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <!-- ক্যাটাগরি সেকশন -->
-  <section id="categories" class="category-section">
-    <h2>📦 পণ্যের ক্যাটাগরি</h2>
-    <div style="margin-top: 30px;">
-      <h3 style="color: #005999; border-bottom: 2px solid #007acc; padding-bottom: 5px;">🌀 ফ্যান</h3>
-      <div class="products">
-        <div class="product">
-          <img src="images/fan.jpg" alt="টেবিল ফ্যান">
-          <h2>টেবিল ফ্যান</h2>
-          <p>১২৫০ টাকা</p>
-        </div>
-        <div class="product">
-          <img src="images/fan.jpg" alt="মিনি ফ্যান">
-          <h2>মিনি ফ্যান</h2>
-          <p>৮৫০ টাকা</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top: 30px;">
-      <h3 style="color: #005999; border-bottom: 2px solid #007acc; padding-bottom: 5px;">💡 লাইট</h3>
-      <div class="products">
-        <div class="product">
-          <img src="images/light.jpg" alt="LED লাইট">
-          <h2>LED লাইট</h2>
-          <p>১৯০ টাকা</p>
-        </div>
-        <div class="product">
-          <img src="images/light.jpg" alt="স্মার্ট লাইট">
-          <h2>স্মার্ট লাইট</h2>
-          <p>২৯০ টাকা</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top: 30px;">
-      <h3 style="color: #005999; border-bottom: 2px solid #007acc; padding-bottom: 5px;">❄️ ফ্রিজ</h3>
-      <div class="products">
-        <div class="product">
-          <img src="images/fridge.jpg" alt="মিনি ফ্রিজ">
-          <h2>মিনি ফ্রিজ</h2>
-          <p>১৫,০০০ টাকা</p>
-        </div>
-        <div class="product">
-          <img src="images/fridge.jpg" alt="ডাবল ডোর ফ্রিজ">
-          <h2>ডাবল ডোর ফ্রিজ</h2>
-          <p>৩০,০০০ টাকা</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact সেকশন -->
-  <section id="contact" style="background-color: #fafafa; padding: 40px 20px; text-align:center;">
-    <h2 style="font-size:28px; color:#003366;">📞 যোগাযোগ করুন</h2>
-    <p>ইমেইল: youremail@gmail.com</p>
-    <p>ফোন: +8801XXXXXXXXX</p>
-    <p>ঠিকানা: আপনার ঠিকানা এখানে</p>
-  </section>
-
-  <footer>
-    <p>© ২০২৫ Milton Electronics | Developed with ❤️ by M2Vai</p>
-    <div style="margin-top: 10px;">
-      <!-- সোশ্যাল আইকনগুলো -->
-    </div>
-  </footer>
+<footer>
+  © ২০২৫ মিল্টন ইলেকট্রনিক্স | তৈরি করেছেন ❤️ মিলে তোমার জন্য
+</footer>
 
 </body>
 </html>
