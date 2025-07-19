@@ -12,7 +12,37 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    
+    /* ক্যাটাগরি ড্রপডাউন স্টাইল */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 230px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 999;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
     body {
       margin: 0;
       font-family: "Hind Siliguri", sans-serif;
@@ -345,7 +375,21 @@
 
   <nav>
     <a href="#">🏠 হোম | Home</a>
-    <a href="#">📂 ক্যাটাগরি | Categories</a>
+    <div class="dropdown">
+  <a href="#">📂 ক্যাটাগরি | Categories</a>
+  <div class="dropdown-content">
+    <a href="#electronics">🔌 ইলেকট্রনিক্স | Electronics</a>
+    <a href="#fashion">👕 পোশাক | Fashion</a>
+    <a href="#kitchen">🍽️ রান্নাঘর | Kitchen</a>
+    <a href="#curtain">🛋️ পর্দা | Curtain</a>
+    <a href="#books">📚 বই | Books</a>
+    <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
+    <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
+    <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
+    <a href="#beauty">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
+    <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
+  </div>
+</div>
     <a href="#">🔥 অফার | Offers</a>
     <a href="#">📞 যোগাযোগ | Contact</a>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
