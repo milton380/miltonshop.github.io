@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* পুরনো স্টাইল একদম অপরিবর্তিত রাখা হয়েছে */
+    /* আপনার পুরনো স্টাইল একদম অপরিবর্তিত */
     body {
       margin: 0;
       font-family: 'Hind Siliguri', sans-serif;
@@ -343,17 +343,22 @@
   <section class="discounts">
     <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>
     <div class="product-grid">
-      <div class="product" data-name="ফ্যান">
+      <!-- product data-name দুই ভাষায়, ইংরেজি ও বাংলা দেওয়া আছে -->
+      <div class="product" data-name="ফ্যান fan">
         <img src="https://via.placeholder.com/150x100?text=Fan" alt="Fan" />
         <p>ডিলাক্স ফ্যান - ১৫% ছাড়</p>
       </div>
-      <div class="product" data-name="ফ্রিজ">
+      <div class="product" data-name="ফ্রিজ fridge">
         <img src="https://via.placeholder.com/150x100?text=Fridge" alt="Fridge" />
         <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>
       </div>
-      <div class="product" data-name="চার্জার">
+      <div class="product" data-name="চার্জার charger">
         <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />
         <p>ফাস্ট চার্জার - ২০% ছাড়</p>
+      </div>
+      <div class="product" data-name="টিভি tv">
+        <img src="https://via.placeholder.com/150x100?text=TV" alt="TV" />
+        <p>স্মার্ট টিভি - ১২% ছাড়</p>
       </div>
     </div>
   </section>
@@ -394,50 +399,50 @@
   </div>
 
   <script>
-  function toggleChat() {
-    const chat = document.getElementById('chatWindow');
-    chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
-  }
-
-  // 🔍 লাইভ সার্চ ফাংশন (কোনো ডিজাইন পরিবর্তন ছাড়াই)
-  document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.querySelector(".search-box input");
-    const searchButton = document.querySelector(".search-box button");
-    const products = document.querySelectorAll(".product");
-
-    function filterProducts() {
-      const query = searchInput.value.trim().toLowerCase();
-      let found = false;
-      products.forEach(function (product) {
-        const name = product.getAttribute("data-name").toLowerCase();
-        if (name.includes(query)) {
-          product.style.display = "block";
-          found = true;
-        } else {
-          product.style.display = "none";
-        }
-      });
+    function toggleChat() {
+      const chat = document.getElementById('chatWindow');
+      chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
     }
 
-    // বাটনে ক্লিক করলে
-    searchButton.addEventListener("click", function () {
-      if (!searchInput.value.trim()) {
-        alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");
-        return;
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+      const products = document.querySelectorAll(".product");
+
+      function filterProducts() {
+        const query = searchInput.value.trim().toLowerCase();
+        let found = false;
+        products.forEach(function (product) {
+          const name = product.getAttribute("data-name").toLowerCase();
+          if (name.includes(query)) {
+            product.style.display = "block";
+            found = true;
+          } else {
+            product.style.display = "none";
+          }
+        });
+        // যদি কিছু না মেলে, alert না দেখানো হয়, শুধু সব লুকানো হয়
       }
-      filterProducts();
-    });
 
-    // টাইপ করলেই লাইভ সার্চ
-    searchInput.addEventListener("input", filterProducts);
-
-    // Enter চাপলেও কাজ করবে
-    searchInput.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
+      // বাটনে ক্লিক করলে সার্চ হবে
+      searchButton.addEventListener("click", function () {
+        if (!searchInput.value.trim()) {
+          alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");
+          return;
+        }
         filterProducts();
-      }
+      });
+
+      // টাইপ করার সাথে সাথে সার্চ হবে (live search)
+      searchInput.addEventListener("input", filterProducts);
+
+      // Enter চাপলে সার্চ হবে
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          filterProducts();
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
