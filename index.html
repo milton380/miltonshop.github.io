@@ -9,78 +9,105 @@
     body {
       margin: 0;
       font-family: 'Hind Siliguri', sans-serif;
-      background-color: #f0f8ff;
+      background-color: #f2f2f2;
     }
+
     header {
-      background-color: #0077cc;
+      background-color: #007BFF;
       color: white;
       padding: 10px 0;
       text-align: center;
-      font-size: 24px;
     }
+
     nav {
-      background-color: #005fa3;
       display: flex;
       justify-content: center;
+      background-color: #0056b3;
       flex-wrap: wrap;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       padding: 14px 20px;
       display: block;
-      font-size: 18px;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background-color: #004080;
+      transition: background-color 0.3s ease;
     }
 
-    /* Dropdown styles */
+    nav a:hover {
+      background-color: #003f7f;
+    }
+
     .dropdown {
       position: relative;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #005fa3;
-      min-width: 200px;
+      background-color: #0056b3;
+      min-width: 250px;
       z-index: 1;
-      flex-direction: column;
-    }
-    .dropdown-content a {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 16px;
-    }
-    .dropdown:hover .dropdown-content {
-      display: flex;
+      top: 48px;
+      left: 0;
     }
 
-    /* Prevent zoom on hover */
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #003f7f;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* ক্যাটাগরি zoom বন্ধ */
     .dropdown > a,
     .dropdown > a:hover,
     .dropdown > a:focus {
       transform: none !important;
-      outline: none !important;
-      box-shadow: none !important;
     }
 
     main {
       padding: 20px;
       text-align: center;
     }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .dropdown-content {
+        position: static;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <header>M2Vai Shop</header>
+  <header>
+    <h1>📦 M2Vai Shop</h1>
+    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place.</p>
+  </header>
 
   <nav>
-    <a href="#">🏠 হোম | Home</a>
-
+    <a href="#">🏠 হোম</a>
+    
     <div class="dropdown">
       <a href="#">📂 ক্যাটাগরি | Categories</a>
       <div class="dropdown-content">
@@ -90,7 +117,7 @@
         <a href="#curtain">🛋️ পর্দা | Curtain</a>
         <a href="#books">📚 বই | Books</a>
         <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
-        <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
+        <a href="#health">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
         <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
         <a href="#cosmetics">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
         <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
@@ -103,9 +130,12 @@
   </nav>
 
   <main>
-    <h2>স্বাগতম M2Vai Shop-এ</h2>
-    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place.</p>
+    <h2>স্বাগতম! Welcome to M2Vai Shop</h2>
+    <p>এখানে আপনি আপনার পছন্দের প্রোডাক্ট পাবেন — কোন স্টক ছাড়াই।</p>
   </main>
 
+  <footer>
+    <p>&copy; 2025 M2Vai Shop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
