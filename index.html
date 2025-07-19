@@ -381,31 +381,23 @@
     }  
   
     // 🔍 সার্চ ফাংশন  
-    document.addEventListener("DOMContentLoaded", function () {  
-      const searchInput = document.querySelector(".search-box input");  
-      const searchButton = document.querySelector(".search-box button");  
-      const products = document.querySelectorAll(".product");  
-  
-      searchButton.addEventListener("click", function () {  
-        const query = searchInput.value.trim().toLowerCase();  
-        if (!query) {  
-          alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");  
-          return;  
-        }  
-        let found = false;  
-        products.forEach(function (product) {  
-          const name = product.getAttribute("data-name").toLowerCase();  
-          if (name.includes(query)) {  
-            product.style.display = "block";  
-            found = true;  
-          } else {  
-            product.style.display = "none";  
-          }  
-        });  
-        if (!found) {  
-          alert("কোনো প্রোডাক্ট পাওয়া যায়নি");  
-        }  
-      });  
-    });  
+    document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".search-box input");
+  const products = document.querySelectorAll(".discounts .product");
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.trim().toLowerCase();
+
+    products.forEach(product => {
+      const nameBn = product.getAttribute("data-name").toLowerCase();
+      const nameEn = product.getAttribute("data-name-en")?.toLowerCase() || "";
+      if (nameBn.includes(query) || nameEn.includes(query)) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  });
+});
   </script>  </body>  
 </html>
