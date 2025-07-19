@@ -325,111 +325,105 @@
         top: 45px;
       }
     }
-    
-    /* Modal Styles */
-    .modal {
-      display: none; /* Hidden by default */
+
+    /* Login / Signup Modal Styles */
+    .modal-overlay {
       position: fixed;
-      z-index: 10000;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
       justify-content: center;
       align-items: center;
+      z-index: 10000;
     }
-    .modal.active {
+    .modal-overlay.active {
       display: flex;
     }
-    .modal-content {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 25px 30px;
+    .modal {
+      background: white;
+      border-radius: 8px;
       width: 320px;
-      max-width: 90vw;
+      max-width: 95%;
+      padding: 20px 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       position: relative;
-      box-shadow: 0 0 15px rgba(0,0,0,0.25);
     }
-    .modal-content h2 {
+    .modal h2 {
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-weight: 700;
       color: #0077cc;
       text-align: center;
     }
-    .modal-content label {
+    .modal label {
       display: block;
       margin-bottom: 6px;
       font-weight: 600;
-      color: #003d66;
+      color: #333;
     }
-    .modal-content input[type="text"],
-    .modal-content input[type="email"],
-    .modal-content input[type="password"] {
+    .modal input[type="text"],
+    .modal input[type="email"],
+    .modal input[type="password"],
+    .modal input[type="tel"],
+    .modal input[type="date"] {
       width: 100%;
       padding: 8px 10px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       border-radius: 5px;
       border: 1px solid #ccc;
       font-size: 14px;
       box-sizing: border-box;
     }
-    .modal-content button.submit-btn {
+    .modal button.submit-btn {
       width: 100%;
+      padding: 10px;
       background-color: #0077cc;
       color: white;
-      padding: 10px 0;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
     }
-    .modal-content button.submit-btn:hover {
+    .modal button.submit-btn:hover {
       background-color: #005fa3;
     }
-    .modal-close {
-      position: absolute;
-      right: 14px;
-      top: 14px;
-      font-size: 22px;
-      color: #0077cc;
-      cursor: pointer;
-      font-weight: 700;
-      border: none;
-      background: none;
-    }
-    .modal-switch {
-      margin-top: 12px;
-      font-size: 14px;
+    .modal .switch-link {
+      margin-top: 10px;
       text-align: center;
-      color: #005fa3;
+      font-size: 14px;
       cursor: pointer;
+      color: #0077cc;
       user-select: none;
     }
-    .modal-switch:hover {
+    .modal .switch-link:hover {
       text-decoration: underline;
     }
-    /* Logged in user display */
-    .welcome-message {
-      color: #e0e0e0;
-      font-weight: 600;
-      font-size: 15px;
-      margin-right: 10px;
+    .modal .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: #666;
+      cursor: pointer;
       user-select: none;
     }
-    .logout-btn {
-      background-color: #cc3300;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 14px;
+    .modal .close-btn:hover {
+      color: #000;
     }
-    .logout-btn:hover {
-      background-color: #992200;
+    /* Logged in user display */
+    #userDisplay {
+      color: white;
+      font-weight: 600;
+      margin-left: 10px;
+      cursor: default;
+      user-select: none;
+    }
+    #logoutBtn {
+      background-color: #cc0000 !important;
+      margin-left: 10px !important;
     }
   </style>
 </head>
@@ -442,12 +436,14 @@
         <button>🔍</button>
         <div class="search-suggestions" id="suggestionsBox"></div>
       </div>
-      <div class="auth-box left-auth" id="authBox">
+      <div class="auth-box left-auth" id="authButtons">
         <button id="loginBtn">Login</button>
         <button id="signupBtn">Sign Up</button>
       </div>
-      <div class="welcome-message" id="welcomeMessage" style="display:none;"></div>
-      <button class="logout-btn" id="logoutBtn" style="display:none;">Logout</button>
+      <div id="userInfo" style="display:none; align-items:center;">
+        <span id="userDisplay"></span>
+        <button id="logoutBtn" class="auth-box-button">Logout</button>
+      </div>
     </div>
   </header>
 
@@ -525,9 +521,4 @@
         ><i class="fab fa-youtube"></i
       ></a>
       <a href="https://instagram.com/m2vai" target="_blank" class="instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://www.threads.com/@m2vai380" target="_blank" class="threads"
-        ><i class="fab fa-threads"></i
-      ></a>
-      <a href="https://www.x.com/m2vai380" target="_blank" class="x"
+        ><i class="
