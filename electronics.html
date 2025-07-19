@@ -18,6 +18,34 @@
       color: #0056b3;
       margin-bottom: 30px;
     }
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .top-buttons a {
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .home-btn {
+      background-color: #007bff;
+    }
+    .home-btn:hover {
+      background-color: #0056b3;
+    }
+    .back-btn {
+      background-color: #28a745;
+    }
+    .back-btn:hover {
+      background-color: #1e7e34;
+    }
     .products-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -66,7 +94,14 @@
   </style>
 </head>
 <body>
+
+  <div class="top-buttons">
+    <a href="index.html" class="home-btn">🏠 হোম</a>
+    <a href="javascript:history.back()" class="back-btn">🔙 ব্যাক</a>
+  </div>
+
   <h1>ইলেকট্রনিক্স পণ্যসমূহ | Electronics Products</h1>
+  
   <div class="products-container">
     <!-- 1. মোবাইল ফোন ও এক্সেসরিজ -->
     <div class="product-card">
@@ -139,4 +174,4 @@
     </div>
   </div>
 </body>
-        </html>
+  </html>
