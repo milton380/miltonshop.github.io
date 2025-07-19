@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* আপনার পুরনো স্টাইল একদম অপরিবর্তিত */
+    /* পুরনো স্টাইল একদম অপরিবর্তিত রাখা হয়েছে */
     body {
       margin: 0;
       font-family: 'Hind Siliguri', sans-serif;
@@ -31,6 +31,7 @@
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
+      position: relative;
     }
     .left-auth {
       display: flex;
@@ -267,6 +268,48 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
+
+    /* লাইভ সার্চ রেজাল্টের স্টাইল */
+    .search-results {
+      position: absolute;
+      top: 38px;
+      left: 0;
+      width: 320px;
+      max-height: 300px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+      display: none;
+    }
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s;
+    }
+    .search-result-item:hover {
+      background-color: #f0f8ff;
+    }
+    .search-result-item img {
+      width: 50px;
+      height: 35px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .search-result-item span {
+      font-size: 14px;
+      color: #003d66;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     @media (max-width: 700px) {
       header {
         flex-direction: column;
@@ -277,6 +320,7 @@
         align-items: flex-start;
         gap: 10px;
         margin-top: 10px;
+        position: relative;
       }
       nav a {
         display: block;
@@ -290,6 +334,14 @@
         max-width: 90%;
         margin: 20px auto;
       }
+      .search-box input {
+        width: 100%;
+      }
+      .search-results {
+        width: 100%;
+        left: 0;
+        top: 38px;
+      }
     }
   </style>
 </head>
@@ -298,8 +350,9 @@
     <h1>M2Vai Shop</h1>
     <div class="header-right">
       <div class="search-box">
-        <input type="text" placeholder="সার্চ করুন | Search" />
+        <input type="text" placeholder="সার্চ করুন | Search" autocomplete="off" />
         <button>🔍</button>
+        <div class="search-results"></div>
       </div>
       <div class="auth-box left-auth">
         <button>Login</button>
@@ -343,22 +396,25 @@
   <section class="discounts">
     <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>
     <div class="product-grid">
-      <!-- product data-name দুই ভাষায়, ইংরেজি ও বাংলা দেওয়া আছে -->
-      <div class="product" data-name="ফ্যান fan">
+      <div class="product" data-name="ফ্যান" data-name-en="fan">
         <img src="https://via.placeholder.com/150x100?text=Fan" alt="Fan" />
         <p>ডিলাক্স ফ্যান - ১৫% ছাড়</p>
       </div>
-      <div class="product" data-name="ফ্রিজ fridge">
+      <div class="product" data-name="ফ্রিজ" data-name-en="fridge">
         <img src="https://via.placeholder.com/150x100?text=Fridge" alt="Fridge" />
         <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>
       </div>
-      <div class="product" data-name="চার্জার charger">
+      <div class="product" data-name="চার্জার" data-name-en="charger">
         <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />
         <p>ফাস্ট চার্জার - ২০% ছাড়</p>
       </div>
-      <div class="product" data-name="টিভি tv">
+      <div class="product" data-name="টিভি" data-name-en="tv">
         <img src="https://via.placeholder.com/150x100?text=TV" alt="TV" />
         <p>স্মার্ট টিভি - ১২% ছাড়</p>
+      </div>
+      <div class="product" data-name="লাইট" data-name-en="light">
+        <img src="https://via.placeholder.com/150x100?text=Light" alt="Light" />
+        <p>এলইডি লাইট - ১৮% ছাড়</p>
       </div>
     </div>
   </section>
@@ -385,64 +441,4 @@
     </section>
     <div class="footer-links">
       <a href="#">Privacy Policy</a> |
-      <a href="#">Terms & Conditions</a> |
-      <a href="#">Refund Policy</a>
-    </div>
-  </footer>
-
-  <div class="chat-box">
-    <button class="chat-button" onclick="toggleChat()">💬</button>
-    <div class="chat-window" id="chatWindow">
-      <p>👋 হ্যালো! কীভাবে সাহায্য করতে পারি?</p>
-      <input type="text" placeholder="মেসেজ লিখুন..." />
-    </div>
-  </div>
-
-  <script>
-    function toggleChat() {
-      const chat = document.getElementById('chatWindow');
-      chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchInput = document.querySelector(".search-box input");
-      const searchButton = document.querySelector(".search-box button");
-      const products = document.querySelectorAll(".product");
-
-      function filterProducts() {
-        const query = searchInput.value.trim().toLowerCase();
-        let found = false;
-        products.forEach(function (product) {
-          const name = product.getAttribute("data-name").toLowerCase();
-          if (name.includes(query)) {
-            product.style.display = "block";
-            found = true;
-          } else {
-            product.style.display = "none";
-          }
-        });
-        // যদি কিছু না মেলে, alert না দেখানো হয়, শুধু সব লুকানো হয়
-      }
-
-      // বাটনে ক্লিক করলে সার্চ হবে
-      searchButton.addEventListener("click", function () {
-        if (!searchInput.value.trim()) {
-          alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");
-          return;
-        }
-        filterProducts();
-      });
-
-      // টাইপ করার সাথে সাথে সার্চ হবে (live search)
-      searchInput.addEventListener("input", filterProducts);
-
-      // Enter চাপলে সার্চ হবে
-      searchInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          filterProducts();
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+      <a href
