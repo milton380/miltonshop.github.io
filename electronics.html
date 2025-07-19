@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ইলেকট্রনিক্স | Electronics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+
+    .product h3 {
+      margin: 10px 0 0 0;
+      font-size: 16px;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔌 ইলেকট্রনিক্স পণ্যসমূহ</h1>
+  </header>
+
+  <a class="back" href="index.html">← ফিরে যান হোমপেজে</a>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://i.imgur.com/5KjFpmF.png" alt="Mobile">
+      <h3>মোবাইল</h3>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/72KD6an.png" alt="Fan">
+      <h3>ফ্যান</h3>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/ZzLUnOU.png" alt="Light">
+      <h3>লাইট</h3>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/nshXvXt.png" alt="TV">
+      <h3>টিভি</h3>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/OVu1zCE.png" alt="Fridge">
+      <h3>ফ্রিজ</h3>
+    </div>
+  </div>
+
+</body>
+</html>
