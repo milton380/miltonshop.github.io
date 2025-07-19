@@ -2,7 +2,8 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- এখানে meta viewport আপডেট করা হলো -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>M2Vai Shop</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <link
@@ -13,49 +14,41 @@
   />
   <style>
     /* ক্যাটাগরি ড্রপডাউন স্টাইল */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}.dropdown > a,
-.dropdown > a:hover,
-.dropdown > a:focus {
-  transform: none !important;
-  outline: none;
-  box-shadow: none;
-}
-    /* ক্যাটাগরি মেনুতে zoom/scale বন্ধ করতে সীমাবদ্ধ করার জন্য */
-.dropdown > a,
-.dropdown > a:hover,
-.dropdown > a:focus {
-  transform: none !important;
-}
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown > a,
+    .dropdown > a:hover,
+    .dropdown > a:focus {
+      transform: none !important;
+      outline: none;
+      box-shadow: none;
+      touch-action: manipulation; /* এখানে যোগ করা হলো */
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 230px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-align: left;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 15px;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 230px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 999;
-  text-align: left;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 15px;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-    
     body {
       margin: 0;
       font-family: "Hind Siliguri", sans-serif;
@@ -389,20 +382,20 @@
   <nav>
     <a href="#">🏠 হোম | Home</a>
     <div class="dropdown">
-  <a href="#">📂 ক্যাটাগরি | Categories</a>
-  <div class="dropdown-content">
-    <a href="#electronics">🔌 ইলেকট্রনিক্স | Electronics</a>
-    <a href="#fashion">👕 পোশাক | Fashion</a>
-    <a href="#kitchen">🍽️ রান্নাঘর | Kitchen</a>
-    <a href="#curtain">🛋️ পর্দা | Curtain</a>
-    <a href="#books">📚 বই | Books</a>
-    <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
-    <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
-    <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
-    <a href="#beauty">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
-    <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
-  </div>
-</div>
+      <a href="#">📂 ক্যাটাগরি | Categories</a>
+      <div class="dropdown-content">
+        <a href="#electronics">🔌 ইলেকট্রনিক্স | Electronics</a>
+        <a href="#fashion">👕 পোশাক | Fashion</a>
+        <a href="#kitchen">🍽️ রান্নাঘর | Kitchen</a>
+        <a href="#curtain">🛋️ পর্দা | Curtain</a>
+        <a href="#books">📚 বই | Books</a>
+        <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
+        <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
+        <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
+        <a href="#beauty">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
+        <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
+      </div>
+    </div>
     <a href="#">🔥 অফার | Offers</a>
     <a href="#">📞 যোগাযোগ | Contact</a>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
@@ -508,43 +501,3 @@
     );
 
     searchInput.addEventListener("input", function () {
-      const query = this.value.trim().toLowerCase();
-
-      if (!query) {
-        suggestionsBox.innerHTML = "";
-        suggestionsBox.classList.remove("visible");
-        return;
-      }
-
-      const matchedProducts = products.filter(
-        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
-      );
-
-      if (matchedProducts.length === 0) {
-        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
-        suggestionsBox.classList.add("visible");
-        return;
-      }
-
-      suggestionsBox.innerHTML = matchedProducts
-        .map(
-          (p) => `
-        <a href="${p.link}" class="search-suggestion-item" tabindex="0">
-          <img src="${p.imgSrc}" alt="${p.alt}" />
-          <span>${p.displayName}</span>
-        </a>
-      `
-        )
-        .join("");
-      suggestionsBox.classList.add("visible");
-    });
-
-    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".search-box")) {
-        suggestionsBox.classList.remove("visible");
-      }
-    });
-  </script>
-</body>
-</html>
