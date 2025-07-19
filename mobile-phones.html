@@ -3,117 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>মোবাইল ফোন ও এক্সেসরিজ - M2Vai Shop</title>
+  <title>মোবাইল ও এক্সেসরিজ - M2Vai Shop</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Hind Siliguri', sans-serif;
-      background-color: #f0f8ff;
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 0;
+      background-color: #f1f1f1;
     }
-    h1 {
-      text-align: center;
-      color: #004080;
-      margin-bottom: 30px;
-    }
-    .products-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    header {
+      background-color: #007bff;
+      color: white;
       padding: 15px;
       text-align: center;
-      transition: 0.3s;
+      font-size: 24px;
     }
-    .product-card:hover {
-      transform: translateY(-5px);
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .product-img {
-      width: 100%;
-      height: 150px;
+    .brand {
+      text-align: center;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .brand:hover {
+      transform: scale(1.05);
+    }
+    .brand img {
+      width: 60px;
+      height: 60px;
       object-fit: contain;
-      margin-bottom: 10px;
     }
-    .product-name {
+    .brand-name {
+      margin-top: 8px;
       font-size: 16px;
       font-weight: bold;
-      color: #0056b3;
-      margin-bottom: 5px;
+      color: #333;
     }
-    .product-price {
-      color: #28a745;
-      font-weight: bold;
-    }
-    .product-link {
+    a {
       text-decoration: none;
       color: inherit;
     }
   </style>
 </head>
 <body>
-  <h1>📱 মোবাইল ফোন ও এক্সেসরিজ</h1>
-  <div class="products-container">
-    
-    <!-- Android Phone -->
-    <a href="samsung-a12.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/58WpNn3/smartphone1.png" alt="Samsung A12" class="product-img">
-        <div class="product-name">স্যামসাং Galaxy A12</div>
-        <div class="product-price">৳১৪,৯৯০</div>
-      </div>
+  <header>📱 মোবাইল ও এক্সেসরিজ | Mobile & Accessories</header>
+
+  <div class="container">
+
+    <a href="samsung.html" class="brand">
+      <img src="images/brands/samsung.png" alt="Samsung">
+      <div class="brand-name">Samsung</div>
     </a>
 
-    <!-- Button Phone -->
-    <a href="nokia-110.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/TM5mcCm/button-phone.png" alt="Nokia 110" class="product-img">
-        <div class="product-name">নোকিয়া 110 বাটন ফোন</div>
-        <div class="product-price">৳১,৮৫০</div>
-      </div>
+    <a href="xiaomi.html" class="brand">
+      <img src="images/brands/xiaomi.png" alt="Xiaomi">
+      <div class="brand-name">Xiaomi</div>
     </a>
 
-    <!-- Wireless Earbuds -->
-    <a href="earbuds.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/gym6LxF/earbuds.png" alt="Wireless Earbuds" class="product-img">
-        <div class="product-name">ওয়্যারলেস ইয়ারবাড</div>
-        <div class="product-price">৳১,৪৯০</div>
-      </div>
+    <a href="realme.html" class="brand">
+      <img src="images/brands/realme.png" alt="Realme">
+      <div class="brand-name">Realme</div>
     </a>
 
-    <!-- Charger -->
-    <a href="fast-charger.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/j4ZFRMb/charger.png" alt="Fast Charger" class="product-img">
-        <div class="product-name">ফাস্ট চার্জার 25W</div>
-        <div class="product-price">৳৭৫০</div>
-      </div>
+    <a href="vivo.html" class="brand">
+      <img src="images/brands/vivo.png" alt="Vivo">
+      <div class="brand-name">Vivo</div>
     </a>
 
-    <!-- Power Bank -->
-    <a href="powerbank.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/bgwZP2Z/powerbank2.png" alt="Powerbank" class="product-img">
-        <div class="product-name">পাওয়ার ব্যাংক 10000mAh</div>
-        <div class="product-price">৳১,২৫০</div>
-      </div>
+    <a href="oppo.html" class="brand">
+      <img src="images/brands/oppo.png" alt="Oppo">
+      <div class="brand-name">Oppo</div>
     </a>
 
-    <!-- Screen Protector -->
-    <a href="screen-protector.html" class="product-link">
-      <div class="product-card">
-        <img src="https://i.ibb.co/h9LRJ4x/screen-protector.png" alt="Screen Protector" class="product-img">
-        <div class="product-name">স্ক্রিন প্রটেক্টর (3 pcs)</div>
-        <div class="product-price">৳২৫০</div>
-      </div>
+    <a href="infinix.html" class="brand">
+      <img src="images/brands/infinix.png" alt="Infinix">
+      <div class="brand-name">Infinix</div>
+    </a>
+
+    <a href="tecno.html" class="brand">
+      <img src="images/brands/tecno.png" alt="Tecno">
+      <div class="brand-name">Tecno</div>
+    </a>
+
+    <a href="nokia.html" class="brand">
+      <img src="images/brands/nokia.png" alt="Nokia">
+      <div class="brand-name">Nokia</div>
+    </a>
+
+    <a href="walton.html" class="brand">
+      <img src="images/brands/walton.png" alt="Walton">
+      <div class="brand-name">Walton</div>
+    </a>
+
+    <a href="symphony.html" class="brand">
+      <img src="images/brands/symphony.png" alt="Symphony">
+      <div class="brand-name">Symphony</div>
+    </a>
+
+    <a href="apple.html" class="brand">
+      <img src="images/brands/apple.png" alt="Apple">
+      <div class="brand-name">Apple</div>
+    </a>
+
+    <a href="oneplus.html" class="brand">
+      <img src="images/brands/oneplus.png" alt="OnePlus">
+      <div class="brand-name">OnePlus</div>
+    </a>
+
+    <a href="huawei.html" class="brand">
+      <img src="images/brands/huawei.png" alt="Huawei">
+      <div class="brand-name">Huawei</div>
+    </a>
+
+    <a href="motorola.html" class="brand">
+      <img src="images/brands/motorola.png" alt="Motorola">
+      <div class="brand-name">Motorola</div>
+    </a>
+
+    <a href="itel.html" class="brand">
+      <img src="images/brands/itel.png" alt="Itel">
+      <div class="brand-name">Itel</div>
+    </a>
+
+    <a href="accessories.html" class="brand">
+      <img src="images/brands/accessories.png" alt="Accessories">
+      <div class="brand-name">Accessories</div>
     </a>
 
   </div>
