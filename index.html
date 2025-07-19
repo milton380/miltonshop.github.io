@@ -17,6 +17,12 @@
   position: relative;
   display: inline-block;
 }
+    /* ক্যাটাগরি মেনুতে zoom/scale বন্ধ করতে সীমাবদ্ধ করার জন্য */
+.dropdown > a,
+.dropdown > a:hover,
+.dropdown > a:focus {
+  transform: none !important;
+}
 
 .dropdown-content {
   display: none;
