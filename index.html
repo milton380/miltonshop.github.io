@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>M2Vai Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
+    rel="stylesheet"
+  />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,10 +15,10 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    /* পুরনো স্টাইল অপরিবর্তিত রাখা হয়েছে */
+    /* পুরনো স্টাইল একদম অপরিবর্তিত রাখা হয়েছে */
     body {
       margin: 0;
-      font-family: "Hind Siliguri", sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
       background-color: #f2f2f2;
     }
     header {
@@ -26,7 +29,6 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: relative; /* লাইভ সার্চ বক্সের জন্য */
     }
     header h1 {
       margin: 0;
@@ -37,7 +39,6 @@
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
-      position: relative;
     }
     .left-auth {
       display: flex;
@@ -167,7 +168,6 @@
       width: 160px;
       text-align: center;
       font-size: 14px;
-      cursor: pointer;
     }
     .product img {
       width: 100%;
@@ -248,81 +248,131 @@
       margin: 0 8px;
       font-size: 13px;
     }
-    /* লাইভ সার্চ সাজেশন বক্স */
-    .search-suggestions {
-      position: absolute;
-      top: 40px;
-      left: 0;
-      width: 220px;
-      max-height: 280px;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      overflow-y: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Chatbox styles */
+    .chat-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       z-index: 9999;
-      display: none;
     }
-    .search-suggestions.visible {
-      display: block;
-    }
-    .search-suggestion-item {
-      display: flex;
-      align-items: center;
-      padding: 8px 10px;
+    .chat-button {
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
       cursor: pointer;
-      border-bottom: 1px solid #eee;
-      transition: background-color 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
-    .search-suggestion-item:last-child {
-      border-bottom: none;
+    .chat-window {
+      display: none;
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      width: 280px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-    .search-suggestion-item:hover {
-      background-color: #f0f8ff;
-    }
-    .search-suggestion-item img {
-      width: 50px;
-      height: 35px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-    .search-suggestion-item span {
-      font-size: 14px;
+    .chat-window p {
+      margin: 0 0 10px 0;
+      font-weight: bold;
       color: #0077cc;
     }
-    /* Responsive */
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 10px;
-        position: relative;
-      }
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
-      .category-grid,
-      .product-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .reviews,
-      .social-media {
-        max-width: 90%;
-        margin: 20px auto;
-      }
-      /* Adjust suggestion box width on small screens */
-      .search-suggestions {
-        width: 90vw;
-        max-height: 300px;
-        top: 45px;
+    .chat-window input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    /* Modal styles for signup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding-top: 60px;
+      box-sizing: border-box;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px 30px;
+      border: 1px solid #888;
+      width: 320px;
+      border-radius: 10px;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #0077cc;
+      text-align: center;
+    }
+    .modal-content label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .modal-content button {
+      width: 100%;
+      padding: 10px 0;
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .modal-content button:hover {
+      background-color: #005fa3;
+    }
+    .error-message {
+      color: red;
+      font-size: 13px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      display: none;
+    }
+    @media (max-width: 400px) {
+      .modal-content {
+        width: 90%;
       }
     }
   </style>
@@ -331,18 +381,16 @@
   <header>
     <h1>M2Vai Shop</h1>
     <div class="header-right">
-      <div class="search-box" style="position: relative;">
-        <input type="text" placeholder="সার্চ করুন | Search" id="searchInput" autocomplete="off" />
+      <div class="search-box">
+        <input type="text" placeholder="সার্চ করুন | Search" />
         <button>🔍</button>
-        <div class="search-suggestions" id="suggestionsBox"></div>
       </div>
       <div class="auth-box left-auth">
-        <button>Login</button>
-        <button>Sign Up</button>
+        <button id="loginBtn">Login</button>
+        <button id="signupBtn">Sign Up</button>
       </div>
     </div>
   </header>
-
   <nav>
     <a href="#">🏠 হোম | Home</a>
     <a href="#">📂 ক্যাটাগরি | Categories</a>
@@ -350,7 +398,6 @@
     <a href="#">📞 যোগাযোগ | Contact</a>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
   </nav>
-
   <div class="live-headline">
     <marquee
       behavior="scroll"
@@ -359,15 +406,14 @@
       onmouseover="this.stop()"
       onmouseout="this.start()"
     >
-      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order now from M2Vai Shop! 🔥
+      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order
+      now from M2Vai Shop! 🔥
     </marquee>
   </div>
-
   <section class="hero">
     <h1>Welcome to M2Vai Shop</h1>
     <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place!</p>
   </section>
-
   <section class="categories">
     <h2>📦 প্রোডাক্ট ক্যাটাগরি | Product Categories</h2>
     <div class="category-grid">
@@ -380,37 +426,38 @@
       <div class="category">গৃহস্থালী | Household</div>
     </div>
   </section>
-
   <section class="discounts">
     <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>
-    <div class="product-grid" id="productGrid">
-      <div class="product" data-name="ফ্যান" data-name-en="fan" data-link="#">
+    <div class="product-grid">
+      <div class="product" data-name="ফ্যান">
         <img src="https://via.placeholder.com/150x100?text=Fan" alt="Fan" />
         <p>ডিলাক্স ফ্যান - ১৫% ছাড়</p>
       </div>
-      <div class="product" data-name="ফ্রিজ" data-name-en="fridge" data-link="#">
+      <div class="product" data-name="ফ্রিজ">
         <img src="https://via.placeholder.com/150x100?text=Fridge" alt="Fridge" />
         <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>
       </div>
-      <div class="product" data-name="চার্জার" data-name-en="charger" data-link="#">
+      <div class="product" data-name="চার্জার">
         <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />
         <p>ফাস্ট চার্জার - ২০% ছাড়</p>
       </div>
     </div>
   </section>
-
   <section class="reviews">
     <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>
     <blockquote>
-      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম
+      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" –
+      মেহেদী, চট্টগ্রাম
     </blockquote>
     <blockquote> "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ </blockquote>
   </section>
-
   <footer>
     © ২০২৫ M2Vai Shop | Developer by M2Vai💙
     <section class="social-media">
-      <a href="https://facebook.com/m2vai" target="_blank" class="facebook"
+      <a
+        href="https://facebook.com/m2vai"
+        target="_blank"
+        class="facebook"
         ><i class="fab fa-facebook-f"></i
       ></a>
       <a href="https://youtube.com/@m2vai" target="_blank" class="youtube"
@@ -436,58 +483,52 @@
     </div>
   </footer>
 
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const products = Array.from(document.querySelectorAll(".discounts .product")).map(
-      (product) => ({
-        nameBn: product.getAttribute("data-name").toLowerCase(),
-        nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
-        imgSrc: product.querySelector("img").src,
-        alt: product.querySelector("img").alt,
-        link: product.getAttribute("data-link") || "#",
-        displayName: product.querySelector("p").textContent,
-      })
-    );
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSignup">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm" novalidate>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
 
-    searchInput.addEventListener("input", function () {
-      const query = this.value.trim().toLowerCase();
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
 
-      if (!query) {
-        suggestionsBox.innerHTML = "";
-        suggestionsBox.classList.remove("visible");
-        return;
-      }
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
 
-      const matchedProducts = products.filter(
-        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
-      );
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" />
 
-      if (matchedProducts.length === 0) {
-        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
-        suggestionsBox.classList.add("visible");
-        return;
-      }
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" />
 
-      suggestionsBox.innerHTML = matchedProducts
-        .map(
-          (p) => `
-        <a href="${p.link}" class="search-suggestion-item" tabindex="0">
-          <img src="${p.imgSrc}" alt="${p.alt}" />
-          <span>${p.displayName}</span>
-        </a>
-      `
-        )
-        .join("");
-      suggestionsBox.classList.add("visible");
-    });
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" />
 
-    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".search-box")) {
-        suggestionsBox.classList.remove("visible");
-      }
-    });
-  </script>
-</body>
-</html>
+        <label for="nid">NID Number</label>
+        <input type="text" id="nid" name="nid" />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          minlength="6"
+          required
+        />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          minlength="6"
+          required
+        />
+        <div class="error-message" id="passwordError">Passwords do not match.</div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div
