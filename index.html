@@ -12,36 +12,91 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    /* ক্যাটাগরি ড্রপডাউন স্টাইল */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+<style>
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 230px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 999;
-  text-align: left;
-}
+  nav {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
 
-.dropdown-content a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 15px;
-}
+  nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+  nav li {
+    margin: 0 10px;
+    position: relative;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    display: inline-block;
+  }
+
+  /* এই অংশেই Zoom/Scale Effect বন্ধ করা হয়েছে */
+  .dropdown > a,
+  .dropdown > a:hover,
+  .dropdown > a:focus {
+    transform: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 230px;
+    z-index: 1;
+    top: 40px;
+    left: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+</style>
 }
     body {
       margin: 0;
