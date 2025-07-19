@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>M2Vai Shop</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -39,6 +36,7 @@
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
+      position: relative; /* For suggestions dropdown */
     }
     .left-auth {
       display: flex;
@@ -51,6 +49,7 @@
       border-radius: 4px;
       border: none;
       width: 160px;
+      outline: none;
     }
     .search-box button {
       padding: 6px 12px;
@@ -135,7 +134,7 @@
       background-color: white;
       padding: 15px 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       min-width: 120px;
       text-align: center;
       font-size: 16px;
@@ -164,7 +163,7 @@
       background-color: white;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       width: 160px;
       text-align: center;
       font-size: 14px;
@@ -179,7 +178,7 @@
       margin: 30px auto;
       padding: 15px 25px;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
     .reviews h2 {
       text-align: center;
@@ -229,7 +228,7 @@
       background-color: #000000;
     }
     .social-media a.x {
-      background-color: #1da1f2;
+      background-color: #1DA1F2;
     }
     .social-media a.gmail {
       background-color: #d44638;
@@ -248,7 +247,6 @@
       margin: 0 8px;
       font-size: 13px;
     }
-    /* Chatbox styles */
     .chat-box {
       position: fixed;
       bottom: 20px;
@@ -264,7 +262,7 @@
       height: 60px;
       font-size: 28px;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
     .chat-window {
       display: none;
@@ -276,7 +274,7 @@
       border: 1px solid #ccc;
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .chat-window p {
       margin: 0 0 10px 0;
@@ -290,90 +288,75 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
-    /* Modal styles for signup */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 10000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding-top: 60px;
-      box-sizing: border-box;
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+      .category-grid,
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .reviews,
+      .social-media {
+        max-width: 90%;
+        margin: 20px auto;
+      }
     }
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px 30px;
-      border: 1px solid #888;
-      width: 320px;
-      border-radius: 10px;
-      position: relative;
-      box-sizing: border-box;
-    }
-    .close {
-      color: #aaa;
+
+    /* নতুন: লাইভ সার্চ সাজেশন বক্স স্টাইল */
+    #suggestions {
       position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-    }
-    .modal-content h2 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      color: #0077cc;
-      text-align: center;
-    }
-    .modal-content label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #333;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 8px 10px;
-      margin-bottom: 14px;
+      top: 38px; /* search box height + padding */
+      left: 0;
+      width: 220px;
+      background: white;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
+      border-top: none;
+      max-height: 300px;
+      overflow-y: auto;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
       font-size: 14px;
     }
-    .modal-content button {
-      width: 100%;
-      padding: 10px 0;
-      background-color: #0077cc;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 6px;
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      padding: 6px 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s ease;
     }
-    .modal-content button:hover {
-      background-color: #005fa3;
+    .suggestion-item:last-child {
+      border-bottom: none;
     }
-    .error-message {
-      color: red;
-      font-size: 13px;
-      margin-top: -10px;
-      margin-bottom: 10px;
-      display: none;
+    .suggestion-item:hover {
+      background-color: #f0f8ff;
     }
-    @media (max-width: 400px) {
-      .modal-content {
-        width: 90%;
-      }
+    .suggestion-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .no-suggestion {
+      padding: 10px;
+      color: #888;
+      text-align: center;
     }
   </style>
 </head>
@@ -382,12 +365,13 @@
     <h1>M2Vai Shop</h1>
     <div class="header-right">
       <div class="search-box">
-        <input type="text" placeholder="সার্চ করুন | Search" />
-        <button>🔍</button>
+        <input type="text" placeholder="সার্চ করুন | Search" autocomplete="off" id="searchInput" />
+        <button id="searchBtn">🔍</button>
+        <div id="suggestions"></div>
       </div>
       <div class="auth-box left-auth">
-        <button id="loginBtn">Login</button>
-        <button id="signupBtn">Sign Up</button>
+        <button>Login</button>
+        <button>Sign Up</button>
       </div>
     </div>
   </header>
@@ -406,8 +390,7 @@
       onmouseover="this.stop()"
       onmouseout="this.start()"
     >
-      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order
-      now from M2Vai Shop! 🔥
+      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order now from M2Vai Shop! 🔥
     </marquee>
   </div>
   <section class="hero">
@@ -446,18 +429,16 @@
   <section class="reviews">
     <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>
     <blockquote>
-      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" –
-      মেহেদী, চট্টগ্রাম
+      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম
     </blockquote>
-    <blockquote> "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ </blockquote>
+    <blockquote>
+      "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ
+    </blockquote>
   </section>
   <footer>
     © ২০২৫ M2Vai Shop | Developer by M2Vai💙
     <section class="social-media">
-      <a
-        href="https://facebook.com/m2vai"
-        target="_blank"
-        class="facebook"
+      <a href="https://facebook.com/m2vai" target="_blank" class="facebook"
         ><i class="fab fa-facebook-f"></i
       ></a>
       <a href="https://youtube.com/@m2vai" target="_blank" class="youtube"
@@ -482,53 +463,8 @@
       <a href="#">Refund Policy</a>
     </div>
   </footer>
-
-  <!-- Signup Modal -->
-  <div id="signupModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeSignup">&times;</span>
-      <h2>Sign Up</h2>
-      <form id="signupForm" novalidate>
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required />
-
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" />
-
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob" />
-
-        <label for="address">Address</label>
-        <input type="text" id="address" name="address" />
-
-        <label for="nid">NID Number</label>
-        <input type="text" id="nid" name="nid" />
-
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          minlength="6"
-          required
-        />
-
-        <label for="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          minlength="6"
-          required
-        />
-        <div class="error-message" id="passwordError">Passwords do not match.</div>
-
-        <button type="submit">Sign Up</button>
-      </form>
-    </div
+  <div class="chat-box">
+    <button class="chat-button" onclick="toggleChat()">💬</button>
+    <div class="chat-window" id="chatWindow">
+      <p>👋 হ্যালো! কীভাবে সাহায্য করতে পারি
+          
