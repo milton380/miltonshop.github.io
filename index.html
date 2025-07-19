@@ -394,38 +394,50 @@
   </div>
 
   <script>
-    function toggleChat() {
-      const chat = document.getElementById('chatWindow');
-      chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
-    }
+  function toggleChat() {
+    const chat = document.getElementById('chatWindow');
+    chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
+  }
 
-    // 🔍 সার্চ ফাংশন
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchInput = document.querySelector(".search-box input");
-      const searchButton = document.querySelector(".search-box button");
-      const products = document.querySelectorAll(".product");
+  // 🔍 লাইভ সার্চ ফাংশন (কোনো ডিজাইন পরিবর্তন ছাড়াই)
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".search-box input");
+    const searchButton = document.querySelector(".search-box button");
+    const products = document.querySelectorAll(".product");
 
-      searchButton.addEventListener("click", function () {
-        const query = searchInput.value.trim().toLowerCase();
-        if (!query) {
-          alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");
-          return;
-        }
-        let found = false;
-        products.forEach(function (product) {
-          const name = product.getAttribute("data-name").toLowerCase();
-          if (name.includes(query)) {
-            product.style.display = "block";
-            found = true;
-          } else {
-            product.style.display = "none";
-          }
-        });
-        if (!found) {
-          alert("কোনো প্রোডাক্ট পাওয়া যায়নি");
+    function filterProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+      let found = false;
+      products.forEach(function (product) {
+        const name = product.getAttribute("data-name").toLowerCase();
+        if (name.includes(query)) {
+          product.style.display = "block";
+          found = true;
+        } else {
+          product.style.display = "none";
         }
       });
+    }
+
+    // বাটনে ক্লিক করলে
+    searchButton.addEventListener("click", function () {
+      if (!searchInput.value.trim()) {
+        alert("অনুগ্রহ করে একটি কীওয়ার্ড লিখুন");
+        return;
+      }
+      filterProducts();
     });
-  </script>
+
+    // টাইপ করলেই লাইভ সার্চ
+    searchInput.addEventListener("input", filterProducts);
+
+    // Enter চাপলেও কাজ করবে
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        filterProducts();
+      }
+    });
+  });
+</script>
 </body>
 </html>
