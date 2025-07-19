@@ -19,9 +19,38 @@
       text-align: center;
       font-size: 24px;
     }
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background-color: #e9ecef;
+    }
+    .top-buttons a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .home-btn {
+      background-color: #007bff;
+    }
+    .home-btn:hover {
+      background-color: #0056b3;
+    }
+    .back-btn {
+      background-color: #28a745;
+    }
+    .back-btn:hover {
+      background-color: #1e7e34;
+    }
+
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 20px;
       padding: 20px;
       max-width: 1000px;
@@ -30,22 +59,22 @@
     .brand {
       text-align: center;
       background: white;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 15px;
+      border-radius: 12px;
       transition: transform 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .brand:hover {
       transform: scale(1.05);
     }
     .brand img {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
     }
     .brand-name {
-      margin-top: 8px;
-      font-size: 16px;
+      margin-top: 10px;
+      font-size: 18px;
       font-weight: bold;
       color: #333;
     }
@@ -57,6 +86,11 @@
 </head>
 <body>
   <header>📱 মোবাইল ও এক্সেসরিজ | Mobile & Accessories</header>
+
+  <div class="top-buttons">
+    <a href="index.html" class="home-btn">🏠 হোম</a>
+    <a href="javascript:history.back()" class="back-btn">🔙 ব্যাক</a>
+  </div>
 
   <div class="container">
 
