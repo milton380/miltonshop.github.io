@@ -345,7 +345,11 @@
         <p>ফাস্ট চার্জার - ২০% ছাড়</p>  
       </div>  
     </div>  
-  </section>    <section class="reviews">  
+  <section id="search-results" style="padding: 20px; display: none;">
+  <h2>🔍 সার্চ রেজাল্ট</h2>
+  <div class="product-grid" id="results-container"></div>
+  <p id="no-results" style="text-align: center; margin-top: 20px; display: none;">❌ কোনো পণ্য পাওয়া যায়নি</p>
+</section> class="reviews">  
     <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>  
     <blockquote>  
       "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম  
@@ -374,30 +378,43 @@
       <p>👋 হ্যালো! কীভাবে সাহায্য করতে পারি?</p>  
       <input type="text" placeholder="মেসেজ লিখুন..." />  
     </div>  
-  </div>    <script>  
-    function toggleChat() {  
-      const chat = document.getElementById('chatWindow');  
-      chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';  
-    }  
-  
-    // 🔍 সার্চ ফাংশন  
-    document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.querySelector(".search-box input");
-  const products = document.querySelectorAll(".discounts .product");
+  </div>    <script>
+  function toggleChat() {
+    const chat = document.getElementById('chatWindow');
+    chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
+  }
 
-  searchInput.addEventListener("input", function () {
-    const query = this.value.trim().toLowerCase();
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".search-box input");
+    const allProducts = document.querySelectorAll(".discounts .product");
+    const resultSection = document.getElementById("search-results");
+    const resultContainer = document.getElementById("results-container");
+    const noResultsText = document.getElementById("no-results");
 
-    products.forEach(product => {
-      const nameBn = product.getAttribute("data-name").toLowerCase();
-      const nameEn = product.getAttribute("data-name-en")?.toLowerCase() || "";
-      if (nameBn.includes(query) || nameEn.includes(query)) {
-        product.style.display = "block";
-      } else {
-        product.style.display = "none";
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+      resultContainer.innerHTML = "";
+      noResultsText.style.display = "none";
+
+      if (query === "") {
+        resultSection.style.display = "none";
+        return;
       }
+
+      let found = 0;
+
+      allProducts.forEach(product => {
+        const name = product.getAttribute("data-name").toLowerCase();
+        if (name.includes(query)) {
+          const clone = product.cloneNode(true);
+          resultContainer.appendChild(clone);
+          found++;
+        }
+      });
+
+      resultSection.style.display = "block";
+      noResultsText.style.display = (found === 0) ? "block" : "none";
     });
   });
-});
-  </script>  </body>  
+</script>  </body>  
 </html>
