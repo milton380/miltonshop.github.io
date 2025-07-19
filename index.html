@@ -5,575 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>M2Vai Shop</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
   <style>
-<style>
-  body {
-    font-family: 'Hind Siliguri', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
-
-  nav {
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
-  }
-
-  nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav li {
-    margin: 0 10px;
-    position: relative;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 6px 10px;
-    display: inline-block;
-  }
-
-  /* এই অংশেই Zoom/Scale Effect বন্ধ করা হয়েছে */
-  .dropdown > a,
-  .dropdown > a:hover,
-  .dropdown > a:focus {
-    transform: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 230px;
-    z-index: 1;
-    top: 40px;
-    left: 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: normal;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-
-  .hero {
-    padding: 20px;
-    text-align: center;
-  }
-</style>
-}
     body {
       margin: 0;
-      font-family: "Hind Siliguri", sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #f0f8ff;
     }
     header {
       background-color: #0077cc;
       color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative; /* লাইভ সার্চ বক্সের জন্য */
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-    .left-auth {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .search-box input {
-      padding: 6px 10px;
-      font-size: 14px;
-      border-radius: 4px;
-      border: none;
-      width: 160px;
-    }
-    .search-box button {
-      padding: 6px 12px;
-      font-size: 14px;
-      border: none;
-      border-radius: 4px;
-      background-color: #005fa3;
-      color: white;
-      cursor: pointer;
-    }
-    .auth-box {
-      display: flex;
-      gap: 10px;
-    }
-    .auth-box button {
-      padding: 6px 14px;
-      font-size: 14px;
-      border: none;
-      border-radius: 4px;
-      background-color: #005fa3;
-      color: white;
-      cursor: pointer;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 24px;
     }
     nav {
       background-color: #005fa3;
-      padding: 10px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 16px;
+      padding: 14px 20px;
+      display: block;
+      font-size: 18px;
+      transition: background 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      background-color: #004080;
     }
-    .live-headline {
-      background-color: #0077cc;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      user-select: none;
-      overflow: hidden;
+
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
     }
-    .live-headline marquee {
-      cursor: pointer;
-    }
-    .hero {
-      background-color: #ffffff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .hero h1 {
-      font-size: 32px;
-      color: #0077cc;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-top: 0;
-    }
-    .categories {
-      padding: 30px 20px;
-      background-color: #e6f2ff;
-    }
-    .categories h2 {
-      text-align: center;
-      color: #003d66;
-    }
-    .category-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .category {
-      background-color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      min-width: 120px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .category:hover {
-      background-color: #d0e7ff;
-    }
-    .discounts {
-      background-color: #fff3e6;
-      padding: 30px 20px;
-    }
-    .discounts h2 {
-      text-align: center;
-      color: #cc5200;
-    }
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .product {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 160px;
-      text-align: center;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .product img {
-      width: 100%;
-      border-radius: 5px;
-    }
-    .reviews {
-      background-color: white;
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 15px 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    }
-    .reviews h2 {
-      text-align: center;
-      color: #0077cc;
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
-    .reviews blockquote {
-      border-left: 4px solid #0077cc;
-      padding-left: 15px;
-      color: #333;
-      font-size: 15px;
-      margin-bottom: 12px;
-      font-style: italic;
-    }
-    .social-media {
-      max-width: 700px;
-      margin: 10px auto 20px auto;
-      text-align: center;
-    }
-    .social-media a {
-      display: inline-block;
-      margin: 0 10px;
-      width: 42px;
-      height: 42px;
-      line-height: 42px;
-      background-color: #0077cc;
-      color: white;
-      border-radius: 50%;
-      font-size: 20px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    .social-media a:hover {
-      background-color: #004d80;
-    }
-    .social-media a.facebook {
-      background-color: #3b5998;
-    }
-    .social-media a.youtube {
-      background-color: #ff0000;
-    }
-    .social-media a.instagram {
-      background-color: #c13584;
-    }
-    .social-media a.threads {
-      background-color: #000000;
-    }
-    .social-media a.x {
-      background-color: #1da1f2;
-    }
-    .social-media a.gmail {
-      background-color: #d44638;
-    }
-    footer {
-      background-color: #003d66;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-    .footer-links a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 8px;
-      font-size: 13px;
-    }
-    /* লাইভ সার্চ সাজেশন বক্স */
-    .search-suggestions {
-      position: absolute;
-      top: 40px;
-      left: 0;
-      width: 220px;
-      max-height: 280px;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      overflow-y: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
+    .dropdown-content {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #005fa3;
+      min-width: 200px;
+      z-index: 1;
+      flex-direction: column;
     }
-    .search-suggestions.visible {
-      display: block;
+    .dropdown-content a {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 16px;
     }
-    .search-suggestion-item {
+    .dropdown:hover .dropdown-content {
       display: flex;
-      align-items: center;
-      padding: 8px 10px;
-      cursor: pointer;
-      border-bottom: 1px solid #eee;
-      transition: background-color 0.2s;
     }
-    .search-suggestion-item:last-child {
-      border-bottom: none;
+
+    /* Prevent zoom on hover */
+    .dropdown > a,
+    .dropdown > a:hover,
+    .dropdown > a:focus {
+      transform: none !important;
+      outline: none !important;
+      box-shadow: none !important;
     }
-    .search-suggestion-item:hover {
-      background-color: #f0f8ff;
-    }
-    .search-suggestion-item img {
-      width: 50px;
-      height: 35px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-    .search-suggestion-item span {
-      font-size: 14px;
-      color: #0077cc;
-    }
-    /* Responsive */
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 10px;
-        position: relative;
-      }
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
-      .category-grid,
-      .product-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .reviews,
-      .social-media {
-        max-width: 90%;
-        margin: 20px auto;
-      }
-      /* Adjust suggestion box width on small screens */
-      .search-suggestions {
-        width: 90vw;
-        max-height: 300px;
-        top: 45px;
-      }
+
+    main {
+      padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>M2Vai Shop</h1>
-    <div class="header-right">
-      <div class="search-box" style="position: relative;">
-        <input type="text" placeholder="সার্চ করুন | Search" id="searchInput" autocomplete="off" />
-        <button>🔍</button>
-        <div class="search-suggestions" id="suggestionsBox"></div>
-      </div>
-      <div class="auth-box left-auth">
-        <button>Login</button>
-        <button>Sign Up</button>
-      </div>
-    </div>
-  </header>
+
+  <header>M2Vai Shop</header>
 
   <nav>
     <a href="#">🏠 হোম | Home</a>
+
     <div class="dropdown">
-  <a href="#">📂 ক্যাটাগরি | Categories</a>
-  <div class="dropdown-content">
-    <a href="#electronics">🔌 ইলেকট্রনিক্স | Electronics</a>
-    <a href="#fashion">👕 পোশাক | Fashion</a>
-    <a href="#kitchen">🍽️ রান্নাঘর | Kitchen</a>
-    <a href="#curtain">🛋️ পর্দা | Curtain</a>
-    <a href="#books">📚 বই | Books</a>
-    <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
-    <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
-    <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
-    <a href="#beauty">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
-    <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
-  </div>
-</div>
+      <a href="#">📂 ক্যাটাগরি | Categories</a>
+      <div class="dropdown-content">
+        <a href="#electronics">🔌 ইলেকট্রনিক্স | Electronics</a>
+        <a href="#fashion">👕 পোশাক | Fashion</a>
+        <a href="#kitchen">🍽️ রান্নাঘর | Kitchen</a>
+        <a href="#curtain">🛋️ পর্দা | Curtain</a>
+        <a href="#books">📚 বই | Books</a>
+        <a href="#baby">🍼 বেবি প্রোডাক্ট | Baby Products</a>
+        <a href="#fitness">🏋️ স্বাস্থ্য ও ফিটনেস | Health & Fitness</a>
+        <a href="#tools">🛠️ টুলস ও হার্ডওয়ার | Tools & Hardware</a>
+        <a href="#cosmetics">💄 কসমেটিকস ও বিউটি | Cosmetics & Beauty</a>
+        <a href="#car">🚗 গাড়ি প্রোডাক্ট | Car Products</a>
+      </div>
+    </div>
+
     <a href="#">🔥 অফার | Offers</a>
     <a href="#">📞 যোগাযোগ | Contact</a>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
   </nav>
 
-  <div class="live-headline">
-    <marquee
-      behavior="scroll"
-      direction="left"
-      scrollamount="6"
-      onmouseover="this.stop()"
-      onmouseout="this.start()"
-    >
-      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order now from M2Vai Shop! 🔥
-    </marquee>
-  </div>
+  <main>
+    <h2>স্বাগতম M2Vai Shop-এ</h2>
+    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place.</p>
+  </main>
 
-  <section class="hero">
-    <h1>Welcome to M2Vai Shop</h1>
-    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place!</p>
-  </section>
-
-  <section class="discounts">
-    <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>
-    <div class="product-grid" id="productGrid">
-      <div class="product" data-name="ফ্যান" data-name-en="fan" data-link="#">
-        <img src="https://via.placeholder.com/150x100?text=Fan" alt="Fan" />
-        <p>ডিলাক্স ফ্যান - ১৫% ছাড়</p>
-      </div>
-      <div class="product" data-name="ফ্রিজ" data-name-en="fridge" data-link="#">
-        <img src="https://via.placeholder.com/150x100?text=Fridge" alt="Fridge" />
-        <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>
-      </div>
-      <div class="product" data-name="চার্জার" data-name-en="charger" data-link="#">
-        <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />
-        <p>ফাস্ট চার্জার - ২০% ছাড়</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="reviews">
-    <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>
-    <blockquote>
-      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম
-    </blockquote>
-    <blockquote> "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ </blockquote>
-  </section>
-
-  <footer>
-    © ২০২৫ M2Vai Shop | Developer by M2Vai💙
-    <section class="social-media">
-      <a href="https://facebook.com/m2vai" target="_blank" class="facebook"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-      <a href="https://youtube.com/@m2vai" target="_blank" class="youtube"
-        ><i class="fab fa-youtube"></i
-      ></a>
-      <a href="https://instagram.com/m2vai" target="_blank" class="instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://www.threads.com/@m2vai380" target="_blank" class="threads"
-        ><i class="fab fa-threads"></i
-      ></a>
-      <a href="https://www.x.com/m2vai380" target="_blank" class="x"
-        ><i class="fab fa-x-twitter"></i
-      ></a>
-      <a href="mailto:m2vai380@gmail.com" class="gmail"
-        ><i class="fas fa-envelope"></i
-      ></a>
-    </section>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms & Conditions</a> |
-      <a href="#">Refund Policy</a>
-    </div>
-  </footer>
-
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const products = Array.from(document.querySelectorAll(".discounts .product")).map(
-      (product) => ({
-        nameBn: product.getAttribute("data-name").toLowerCase(),
-        nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
-        imgSrc: product.querySelector("img").src,
-        alt: product.querySelector("img").alt,
-        link: product.getAttribute("data-link") || "#",
-        displayName: product.querySelector("p").textContent,
-      })
-    );
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.trim().toLowerCase();
-
-      if (!query) {
-        suggestionsBox.innerHTML = "";
-        suggestionsBox.classList.remove("visible");
-        return;
-      }
-
-      const matchedProducts = products.filter(
-        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
-      );
-
-      if (matchedProducts.length === 0) {
-        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
-        suggestionsBox.classList.add("visible");
-        return;
-      }
-
-      suggestionsBox.innerHTML = matchedProducts
-        .map(
-          (p) => `
-        <a href="${p.link}" class="search-suggestion-item" tabindex="0">
-          <img src="${p.imgSrc}" alt="${p.alt}" />
-          <span>${p.displayName}</span>
-        </a>
-      `
-        )
-        .join("");
-      suggestionsBox.classList.add("visible");
-    });
-
-    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".search-box")) {
-        suggestionsBox.classList.remove("visible");
-      }
-    });
-  </script>
 </body>
 </html>
