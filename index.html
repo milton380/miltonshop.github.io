@@ -12,35 +12,34 @@
     referrerpolicy="no-referrer"
   />
   <style>
+    /* ===== আপনার আগের CSS ===== */
+    /* (আপনার ডিজাইন ও স্টাইল একদম আগের মতো থাকবে) */
+
     .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 14px;
-  text-decoration: none;
-  display: block;
-  background-color: #fff;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      background-color: #fff;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
     body {
       margin: 0;
       font-family: "Hind Siliguri", sans-serif;
@@ -54,7 +53,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: relative; /* লাইভ সার্চ বক্সের জন্য */
+      position: relative;
     }
     header h1 {
       margin: 0;
@@ -276,6 +275,7 @@
       margin: 0 8px;
       font-size: 13px;
     }
+
     /* লাইভ সার্চ সাজেশন বক্স */
     .search-suggestions {
       position: absolute;
@@ -319,6 +319,77 @@
       font-size: 14px;
       color: #0077cc;
     }
+
+    /* ===== Login / Sign Up Modal CSS ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    .modal {
+      background: #fff;
+      width: 320px;
+      max-width: 90%;
+      border-radius: 10px;
+      padding: 25px 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal h2 {
+      margin-top: 0;
+      color: #005fa3;
+      text-align: center;
+    }
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #666;
+      cursor: pointer;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background-color: #005fa3;
+      border: none;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #004077;
+    }
+    .switch-text {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    .switch-text a {
+      color: #005fa3;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .switch-text a:hover {
+      text-decoration: underline;
+    }
+
     /* Responsive */
     @media (max-width: 700px) {
       header {
@@ -365,8 +436,8 @@
         <div class="search-suggestions" id="suggestionsBox"></div>
       </div>
       <div class="auth-box left-auth">
-        <button>Login</button>
-        <button>Sign Up</button>
+        <button id="loginBtn">Login</button>
+        <button id="signupBtn">Sign Up</button>
       </div>
     </div>
   </header>
@@ -374,11 +445,11 @@
   <nav>
     <a href="#">🏠 হোম | Home</a>
     <div class="dropdown">
-  <a href="#">📂 ক্যাটাগরি | Categories</a>
-  <div class="dropdown-content">
-    <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>
-    <a href="fashion.html">👕 পোশাক</a>
-    <a href="hardware.html">🛠️ হার্ডওয়্যার</a>
+      <a href="#">📂 ক্যাটাগরি | Categories</a>
+      <div class="dropdown-content">
+        <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>
+        <a href="fashion.html">👕 পোশাক</a>
+        <a href="hardware.html">🛠️ হার্ডওয়্যার</a>
     <a href="medicine.html">💊 ঔষধ ও স্বাস্থ্যসেবা</a>
     <a href="home.html">🏠 হোম ও কিচেন</a>
     <a href="baby.html">🧸 বাচ্চাদের জিনিস</a>
