@@ -364,10 +364,10 @@
         <button>🔍</button>    
         <div class="search-suggestions" id="suggestionsBox"></div>    
       </div>    
-      <div class="auth-box left-auth">
-  <button onclick="openLoginModal()">Login</button>
-  <button onclick="openSignupModal()">Sign Up</button>
-</div>    
+      <div class="auth-box left-auth">    
+        <button>Login</button>    
+        <button>Sign Up</button>    
+      </div>    
     </div>    
   </header>    
     
@@ -420,51 +420,14 @@
   </form>  
 </div>  
   
-  </div>  <!-- Rest of the page content remains unchanged -->  <script>
-  function openMessageModal() {
-    document.getElementById("messageModal").style.display = "flex";
-  }
-  function closeMessageModal() {
-    document.getElementById("messageModal").style.display = "none";
-  }
-  function openLoginModal() {
-    document.getElementById("loginModal").style.display = "flex";
-  }
-  function closeLoginModal() {
-    document.getElementById("loginModal").style.display = "none";
-  }
-  function openSignupModal() {
-    document.getElementById("signupModal").style.display = "flex";
-  }
-  function closeSignupModal() {
-    document.getElementById("signupModal").style.display = "none";
-  }
-
-  // ✅ Success Message Functionality
-  document.addEventListener("DOMContentLoaded", function () {
-    // Signup Form
-    const signupForm = document.querySelector("#signupModal form");
-    if (signupForm) {
-      signupForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");
-        signupForm.reset();
-        closeSignupModal();
-      });
-    }
-
-    // Login Form
-    const loginForm = document.querySelector("#loginModal form");
-    if (loginForm) {
-      loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("🔓 সফলভাবে লগইন হয়েছে!");
-        loginForm.reset();
-        closeLoginModal();
-      });
-    }
-  });
-</script></body>  
+  </div>  <!-- Rest of the page content remains unchanged -->  <script>  
+    function openMessageModal() {  
+      document.getElementById("messageModal").style.display = "flex";  
+    }  
+    function closeMessageModal() {  
+      document.getElementById("messageModal").style.display = "none";  
+    }  
+  </script></body>  
 </html>    
   </nav>    
     
@@ -593,4 +556,4 @@
     });    
   </script>    
 </body>    
-</html>
+  </html>
