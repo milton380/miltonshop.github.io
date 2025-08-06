@@ -367,10 +367,7 @@
       <div class="auth-box left-auth">
         <button onclick="openLoginModal()">Login</button>
         <button onclick="openSignupModal()">Sign Up</button>
-      <div class="digital-clock" style="color: white; font-size: 13px; line-height: 1.4; text-align: center;">
-  <div id="digitalTime">🕒 Loading...</div>
-  <div id="digitalDate">📅 Loading...</div>
-</div>
+      </div>
     </div>
   </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
     <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
@@ -420,6 +417,7 @@
 
   // ✅ Success Message Functionality
   document.addEventListener("DOMContentLoaded", function () {
+    // Signup Form
     const signupForm = document.querySelector("#signupModal form");
     if (signupForm) {
       signupForm.addEventListener("submit", function (e) {
@@ -430,6 +428,7 @@
       });
     }
 
+    // Login Form
     const loginForm = document.querySelector("#loginModal form");
     if (loginForm) {
       loginForm.addEventListener("submit", function (e) {
@@ -440,38 +439,10 @@
       });
     }
   });
-</script> <!-- ✅ এইটা বাদ পড়েছিল -->
-
-<!-- তারপর ঘড়ির জন্য আলাদা স্ক্রিপ্ট -->
-<script>
-  function updateDigitalClock() {
-    const now = new Date();
-
-    const optionsTime = {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true
-    };
-
-    const optionsDate = {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      weekday: 'long'
-    };
-
-    const timeStr = now.toLocaleTimeString('en-US', optionsTime);
-    const dateStr = now.toLocaleDateString('en-GB', optionsDate);
-
-    document.getElementById('digitalTime').textContent = '🕒 ' + timeStr;
-    document.getElementById('digitalDate').textContent = '📅 ' + dateStr;
-  }
-
-  setInterval(updateDigitalClock, 1000);
-  updateDigitalClock();
-</script>
-</body>
+</script></body>
 </html>
+  </header>  
+  
     <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
     <a href="#">🏠 হোম | Home</a><div class="dropdown">
   <a href="#">📂 ক্যাটাগরি | Categories</a>
@@ -639,22 +610,4 @@
       suggestionsBox.innerHTML = matchedProducts  
         .map(  
           (p) => `  
-        <a href="${p.link}" class="search-suggestion-item" tabindex="0">  
-          <img src="${p.imgSrc}" alt="${p.alt}" />  
-          <span>${p.displayName}</span>  
-        </a>  
-      `  
-        )  
-        .join("");  
-      suggestionsBox.classList.add("visible");  
-    });  
-  
-    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে  
-    document.addEventListener("click", function (e) {  
-      if (!e.target.closest(".search-box")) {  
-        suggestionsBox.classList.remove("visible");  
-      }  
-    });  
-  </script>  
-</body>  
-</html>
+        <a href="${p.link}" class
