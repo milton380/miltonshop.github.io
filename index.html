@@ -395,26 +395,39 @@
         <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>
       </form>
     </div>
-  </div>  <!-- JavaScript -->  <script>
-    function openMessageModal() {
-      document.getElementById("messageModal").style.display = "flex";
+  </div>  <!-- JavaScript --><script>
+  function openMessageModal() {
+    document.getElementById("messageModal").style.display = "flex";
+  }
+  function closeMessageModal() {
+    document.getElementById("messageModal").style.display = "none";
+  }
+  function openLoginModal() {
+    document.getElementById("loginModal").style.display = "flex";
+  }
+  function closeLoginModal() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+  function openSignupModal() {
+    document.getElementById("signupModal").style.display = "flex";
+  }
+  function closeSignupModal() {
+    document.getElementById("signupModal").style.display = "none";
+  }
+
+  // ✅ SIGNUP FORM SUCCESS MESSAGE
+  document.addEventListener("DOMContentLoaded", function () {
+    const signupForm = document.querySelector("#signupModal form");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // রিলোড বন্ধ
+        alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");
+        signupForm.reset(); // ফর্ম ক্লিয়ার
+        closeSignupModal(); // পপআপ বন্ধ
+      });
     }
-    function closeMessageModal() {
-      document.getElementById("messageModal").style.display = "none";
-    }
-    function openLoginModal() {
-      document.getElementById("loginModal").style.display = "flex";
-    }
-    function closeLoginModal() {
-      document.getElementById("loginModal").style.display = "none";
-    }
-    function openSignupModal() {
-      document.getElementById("signupModal").style.display = "flex";
-    }
-    function closeSignupModal() {
-      document.getElementById("signupModal").style.display = "none";
-    }
-  </script></body>
+  });
+</script></body>
 </html>
   </header>  
   
