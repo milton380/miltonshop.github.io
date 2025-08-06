@@ -574,40 +574,59 @@
     </div>  
   </footer>  
   
-  <script>  
-    const searchInput = document.getElementById("searchInput");  
-    const suggestionsBox = document.getElementById("suggestionsBox");  
-    const products = Array.from(document.querySelectorAll(".discounts .product")).map(  
-      (product) => ({  
-        nameBn: product.getAttribute("data-name").toLowerCase(),  
-        nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",  
-        imgSrc: product.querySelector("img").src,  
-        alt: product.querySelector("img").alt,  
-        link: product.getAttribute("data-link") || "#",  
-        displayName: product.querySelector("p").textContent,  
-      })  
-    );  
-  
-    searchInput.addEventListener("input", function () {  
-      const query = this.value.trim().toLowerCase();  
-  
-      if (!query) {  
-        suggestionsBox.innerHTML = "";  
-        suggestionsBox.classList.remove("visible");  
-        return;  
-      }  
-  
-      const matchedProducts = products.filter(  
-        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)  
-      );  
-  
-      if (matchedProducts.length === 0) {  
-        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';  
-        suggestionsBox.classList.add("visible");  
-        return;  
-      }  
-  
-      suggestionsBox.innerHTML = matchedProducts  
-        .map(  
-          (p) => `  
-        <a href="${p.link}" class
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsBox = document.getElementById("suggestionsBox");
+
+  const products = Array.from(document.querySelectorAll(".discounts .product")).map(
+    (product) => ({
+      nameBn: product.getAttribute("data-name")?.toLowerCase() || "",
+      nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
+      imgSrc: product.querySelector("img").src,
+      alt: product.querySelector("img").alt,
+      link: product.getAttribute("data-link") || "#",
+      displayName: product.querySelector("p").textContent,
+    })
+  );
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.trim().toLowerCase();
+
+    if (!query) {
+      suggestionsBox.innerHTML = "";
+      suggestionsBox.classList.remove("visible");
+      return;
+    }
+
+    const matchedProducts = products.filter(
+      (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
+    );
+
+    if (matchedProducts.length === 0) {
+      suggestionsBox.innerHTML =
+        '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
+      suggestionsBox.classList.add("visible");
+      return;
+    }
+
+    suggestionsBox.innerHTML = matchedProducts
+      .map(
+        (p) => `
+        <a href="${p.link}" class="suggestion-item" style="display:flex; align-items:center; padding:10px; text-decoration:none; border-bottom:1px solid #eee;">
+          <img src="${p.imgSrc}" alt="${p.alt}" style="width:40px; height:40px; object-fit:cover; margin-right:10px;">
+          <span>${p.displayName}</span>
+        </a>
+      `
+      )
+      .join("");
+
+    suggestionsBox.classList.add("visible");
+  });
+
+  // Hide suggestions when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!suggestionsBox.contains(e.target) && e.target !== searchInput) {
+      suggestionsBox.classList.remove("visible");
+    }
+  });
+</script>
