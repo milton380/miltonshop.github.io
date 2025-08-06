@@ -415,15 +415,27 @@
     document.getElementById("signupModal").style.display = "none";
   }
 
-  // ✅ SIGNUP FORM SUCCESS MESSAGE
+  // ✅ Success Message Functionality
   document.addEventListener("DOMContentLoaded", function () {
+    // Signup Form
     const signupForm = document.querySelector("#signupModal form");
     if (signupForm) {
       signupForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // রিলোড বন্ধ
+        e.preventDefault();
         alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");
-        signupForm.reset(); // ফর্ম ক্লিয়ার
-        closeSignupModal(); // পপআপ বন্ধ
+        signupForm.reset();
+        closeSignupModal();
+      });
+    }
+
+    // Login Form
+    const loginForm = document.querySelector("#loginModal form");
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("🔓 সফলভাবে লগইন হয়েছে!");
+        loginForm.reset();
+        closeLoginModal();
       });
     }
   });
