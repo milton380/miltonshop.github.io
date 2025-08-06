@@ -420,7 +420,6 @@
 
   // ✅ Success Message Functionality
   document.addEventListener("DOMContentLoaded", function () {
-    // Signup Form
     const signupForm = document.querySelector("#signupModal form");
     if (signupForm) {
       signupForm.addEventListener("submit", function (e) {
@@ -431,7 +430,6 @@
       });
     }
 
-    // Login Form
     const loginForm = document.querySelector("#loginModal form");
     if (loginForm) {
       loginForm.addEventListener("submit", function (e) {
@@ -442,6 +440,9 @@
       });
     }
   });
+</script> <!-- ✅ এইটা বাদ পড়েছিল -->
+
+<!-- তারপর ঘড়ির জন্য আলাদা স্ক্রিপ্ট -->
 <script>
   function updateDigitalClock() {
     const now = new Date();
