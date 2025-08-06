@@ -371,35 +371,37 @@
     </div>  
   </header>  
   
-  <nav>  
-    <a href="#">🏠 হোম | Home</a>  
-    <div class="dropdown">  
-  <a href="#">📂 ক্যাটাগরি | Categories</a>  
-  <div class="dropdown-content">  
-    <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>  
-    <a href="fashion.html">👕 পোশাক</a>  
-    <a href="hardware.html">🛠️ হার্ডওয়্যার</a>  
-    <a href="medicine.html">💊 ঔষধ ও স্বাস্থ্যসেবা</a>  
-    <a href="home.html">🏠 হোম ও কিচেন</a>  
-    <a href="baby.html">🧸 বাচ্চাদের জিনিস</a>  
-    <a href="education.html">📚 শিক্ষা ও বই</a>  
-    <a href="grocery.html">🍱 খাবার ও মুদি</a>  
-  </div>  
-</div>  
-    <a href="#">🔥 অফার | Offers</a>  
-        <div class="dropdown">
-      <a href="#">📞 যোগাযোগ | Contact ▾</a>
-      <div class="dropdown-content">
-        <a href="https://youtube.com/@m2vai" target="_blank">🔔 Subscribe (YouTube)</a>
-        <a href="https://facebook.com/m2vaipage" target="_blank">📘 Facebook</a>
-        <a href="https://instagram.com/m2vai380" target="_blank">📸 Instagram</a>
-        <a href="https://x.com/m2vai380" target="_blank">🐦 Twitter (X)</a>
-        <a href="https://threads.com/@m2vai380" target="_blank">💬 Threads</a>
-        <a href="mailto:info.m2vai380@gmail.com">📩 Email</a>
-        <a href="#" onclick="openMessageModal()">✉️ সরাসরি মেসেজ পাঠান</a>
-      </div>
-    </div>
-  </nav>  <!-- Message Modal (popup) -->  <div id="messageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+    <a href="#">🏠 হোম | Home</a><div class="dropdown">
+  <a href="#">📂 ক্যাটাগরি | Categories</a>
+  <div class="dropdown-content">
+    <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>
+    <a href="fashion.html">👕 পোশাক</a>
+    <a href="hardware.html">🛠️ হার্ডওয়্যার</a>
+    <a href="medicine.html">💊 ঔষধ ও স্বাস্থ্যসেবা</a>
+    <a href="home.html">🏠 হোম ও কিচেন</a>
+    <a href="baby.html">🧸 বাচ্চাদের জিনিস</a>
+    <a href="education.html">📚 শিক্ষা ও বই</a>
+    <a href="grocery.html">🍱 খাবার ও মুদি</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <a href="#">📞 যোগাযোগ | Contact ▾</a>
+  <div class="dropdown-content">
+    <a href="https://youtube.com/@m2vai" target="_blank">🔔 Subscribe (YouTube)</a>
+    <a href="https://facebook.com/m2vaipage" target="_blank">📘 Facebook</a>
+    <a href="https://instagram.com/m2vai380" target="_blank">📸 Instagram</a>
+    <a href="https://x.com/m2vai380" target="_blank">🐦 Twitter (X)</a>
+    <a href="https://threads.com/@m2vai380" target="_blank">💬 Threads</a>
+    <a href="mailto:info.m2vai380@gmail.com">📩 Email</a>
+    <a href="#" onclick="openMessageModal()">✉️ সরাসরি মেসেজ পাঠান</a>
+  </div>
+</div>
+
+<a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
+
+  </nav>  <!-- Message Modal -->  <div id="messageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
     <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
       <span onclick="closeMessageModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
       <h3 style="margin-top:0; color:#0077cc; text-align:center;">✉️ সরাসরি মেসেজ পাঠান</h3>
@@ -418,15 +420,13 @@
   </form>
 </div>
 
-  </div>  <!-- rest of the page content stays the same -->  <script>
+  </div>  <!-- Rest of the page content remains unchanged -->  <script>
     function openMessageModal() {
       document.getElementById("messageModal").style.display = "flex";
     }
     function closeMessageModal() {
       document.getElementById("messageModal").style.display = "none";
     }
-
-    // existing search JS remains untouched
   </script></body>
 </html>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>  
