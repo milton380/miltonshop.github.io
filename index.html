@@ -387,11 +387,48 @@
   </div>  
 </div>  
     <a href="#">🔥 অফার | Offers</a>  
-    <a href="#">📞 যোগাযোগ | Contact</a>
+        <div class="dropdown">
+      <a href="#">📞 যোগাযোগ | Contact ▾</a>
+      <div class="dropdown-content">
+        <a href="https://youtube.com/@m2vai" target="_blank">🔔 Subscribe (YouTube)</a>
+        <a href="https://facebook.com/m2vaipage" target="_blank">📘 Facebook</a>
+        <a href="https://instagram.com/m2vai380" target="_blank">📸 Instagram</a>
+        <a href="https://x.com/m2vai380" target="_blank">🐦 Twitter (X)</a>
+        <a href="https://threads.com/@m2vai380" target="_blank">💬 Threads</a>
+        <a href="mailto:info.m2vai380@gmail.com">📩 Email</a>
+        <a href="#" onclick="openMessageModal()">✉️ সরাসরি মেসেজ পাঠান</a>
+      </div>
+    </div>
+  </nav>  <!-- Message Modal (popup) -->  <div id="messageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeMessageModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✉️ সরাসরি মেসেজ পাঠান</h3>
+      <form>
+        <label for="modalName">নাম:</label><br>
+        <input type="text" id="modalName" name="modalName" required style="width:100%; padding:8px; margin-bottom:10px;"><br><label for="modalEmail">ইমেইল / মোবাইল:</label><br>
+    <input type="text" id="modalEmail" name="modalEmail" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
 
+    <label for="modalMessage">মেসেজ:</label><br>
+    <textarea id="modalMessage" name="modalMessage" rows="4" required style="width:100%; padding:8px; margin-bottom:10px;"></textarea><br>
 
+    <label for="modalPhoto">ছবি যুক্ত করুন:</label><br>
+    <input type="file" id="modalPhoto" name="modalPhoto" accept="image/*" style="margin-bottom:10px;"><br>
 
-    
+    <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">📤 পাঠান</button>
+  </form>
+</div>
+
+  </div>  <!-- rest of the page content stays the same -->  <script>
+    function openMessageModal() {
+      document.getElementById("messageModal").style.display = "flex";
+    }
+    function closeMessageModal() {
+      document.getElementById("messageModal").style.display = "none";
+    }
+
+    // existing search JS remains untouched
+  </script></body>
+</html>
     <a href="#">ℹ️ আমাদের সম্পর্কে | About</a>  
   </nav>  
   
