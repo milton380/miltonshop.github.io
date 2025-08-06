@@ -364,11 +364,58 @@
         <button>🔍</button>  
         <div class="search-suggestions" id="suggestionsBox"></div>  
       </div>  
-      <div class="auth-box left-auth">  
-        <button>Login</button>  
-        <button>Sign Up</button>  
-      </div>  
-    </div>  
+      <div class="auth-box left-auth">
+        <button onclick="openLoginModal()">Login</button>
+        <button onclick="openSignupModal()">Sign Up</button>
+      </div>
+    </div>
+  </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeLoginModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">🔐 লগইন করুন</h3>
+      <form>
+        <label>👤 ফোন নাম্বার / ইমেইল:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>🔑 পাসওয়ার্ড:</label><br>
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">🔓 Login</button>
+      </form>
+    </div>
+  </div>  <!-- Signup Modal -->  <div id="signupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeSignupModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✅ সাইন আপ করুন</h3>
+      <form>
+        <label>🧑 নাম:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>📧 ইমেইল / ফোন নাম্বার:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>🔐 পাসওয়ার্ড:</label><br>
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>
+      </form>
+    </div>
+  </div>  <!-- JavaScript -->  <script>
+    function openMessageModal() {
+      document.getElementById("messageModal").style.display = "flex";
+    }
+    function closeMessageModal() {
+      document.getElementById("messageModal").style.display = "none";
+    }
+    function openLoginModal() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+    function closeLoginModal() {
+      document.getElementById("loginModal").style.display = "none";
+    }
+    function openSignupModal() {
+      document.getElementById("signupModal").style.display = "flex";
+    }
+    function closeSignupModal() {
+      document.getElementById("signupModal").style.display = "none";
+    }
+  </script></body>
+</html>
   </header>  
   
     <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
