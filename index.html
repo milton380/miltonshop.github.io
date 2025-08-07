@@ -395,7 +395,7 @@
         <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>
       </form>
     </div>
-  </div>  <!-- JavaScript --><script>
+  </div>  <!-- JavaScript --><<script>
   function openMessageModal() {
     document.getElementById("messageModal").style.display = "flex";
   }
@@ -415,7 +415,7 @@
     document.getElementById("signupModal").style.display = "none";
   }
 
-  // ✅ Success Message Functionality
+  // ✅ Success Message Functionality + Search Box
   document.addEventListener("DOMContentLoaded", function () {
     // Signup Form
     const signupForm = document.querySelector("#signupModal form");
@@ -436,6 +436,23 @@
         alert("🔓 সফলভাবে লগইন হয়েছে!");
         loginForm.reset();
         closeLoginModal();
+      });
+    }
+
+    // Search Box Functionality
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          let query = this.value.trim();
+          if (query !== "") {
+            alert("You searched for: " + query);
+            // ভবিষ্যতে এখানে সার্চ রেজাল্ট পেইজে পাঠানোর কোড বসানো যাবে
+          } else {
+            alert("Please type something to search.");
+          }
+        }
       });
     }
   });
