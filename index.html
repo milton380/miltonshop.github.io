@@ -439,7 +439,58 @@
       });
     }
   });
-</script></body>
+const searchInput = document.getElementById("searchInput");
+    const suggestionsBox = document.getElementById("suggestionsBox");
+    const products = Array.from(document.querySelectorAll(".discounts .product")).map(
+      (product) => ({
+        nameBn: product.getAttribute("data-name").toLowerCase(),
+        nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
+        imgSrc: product.querySelector("img").src,
+        alt: product.querySelector("img").alt,
+        link: product.getAttribute("data-link") || "#",
+        displayName: product.querySelector("p").textContent,
+      })
+    );
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+
+      if (!query) {
+        suggestionsBox.innerHTML = "";
+        suggestionsBox.classList.remove("visible");
+        return;
+      }
+
+      const matchedProducts = products.filter(
+        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
+      );
+
+      if (matchedProducts.length === 0) {
+        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
+        suggestionsBox.classList.add("visible");
+        return;
+      }
+
+      suggestionsBox.innerHTML = matchedProducts
+        .map(
+          (p) => `
+        <a href="${p.link}" class="search-suggestion-item" tabindex="0">
+          <img src="${p.imgSrc}" alt="${p.alt}" />
+          <span>${p.displayName}</span>
+        </a>
+      `
+        )
+        .join("");
+      suggestionsBox.classList.add("visible");
+    });
+
+    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".search-box")) {
+        suggestionsBox.classList.remove("visible");
+      }
+    });
+  </script></body>
 </html>
   </header>  
   
