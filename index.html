@@ -530,25 +530,10 @@
         <img src="Samsung fridge.jpg" alt="Fridge" />  
         <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>  
       </div>  
-      <div class="product" data-name="adapter.jpg" data-name-en="charger" data-link="#">  
-        <img src="adapter.jpg" alt="Charger" />  
+      <div class="product" data-name="চার্জার" data-name-en="charger" data-link="#">  
+        <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />  
         <p>ফাস্ট চার্জার - ২০% ছাড়</p>  
-      </div>
-      <div class="product" data-name="Inverter with charger.jpg" data-name-en="Inverter with charger.jpg" data-link="#">  
-        <img src="Inverter with charger.jpg" alt="Fridge" />  
-        <p>ইনভাইটার এবং চার্জার - ১০% ছাড়</p>  
       </div>  
-      <div class="product" data-name="ফ্রিজ" data-name-en="Mini ceiling fan.jpg" data-link="#">  
-        <img src="Mini ceiling fan.jpg" alt="fan" />  
-        <p>ছোট সিলিং ফ্যান - ১০% ছাড়</p>  
-      </div>  
-      <div class="product" data-name="adapter.jpg" data-name-en="charger" data-link="#">  
-        <img src="adapter.jpg" alt="Charger" />  
-        <p>ফাস্ট চার্জার - ২০% ছাড়</p>  
-      </div>
-      <div class="product" data-name="Inverter with charger.jpg" data-name-en="Inverter with charger.jpg" data-link="#">  
-        <img src="Inverter with charger.jpg" alt="Fridge" />  
-        <p>ইনভাইটার এবং চার্জার - ১০% ছাড়</p>  
     </div>  
   </section>  
   
@@ -582,4 +567,27 @@
         ><i class="fas fa-envelope"></i  
       ></a>  
     </section>  
-    <div cla
+    <div class="footer-links">  
+      <a href="#">Privacy Policy</a> |  
+      <a href="#">Terms & Conditions</a> |  
+      <a href="#">Refund Policy</a>  
+    </div>  
+  </footer>  
+  
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsBox = document.getElementById("suggestionsBox");
+
+  const products = Array.from(document.querySelectorAll(".discounts .product")).map(
+    (product) => ({
+      nameBn: product.getAttribute("data-name")?.toLowerCase() || "",
+      nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
+      imgSrc: product.querySelector("img").src,
+      alt: product.querySelector("img").alt,
+      link: product.getAttribute("data-link") || "#",
+      displayName: product.querySelector("p").textContent,
+    })
+  );
+
+  searchInput.addEventListener("input", function () {
+    const query
