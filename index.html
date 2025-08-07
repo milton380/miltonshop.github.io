@@ -364,227 +364,230 @@
         <button>🔍</button>    
         <div class="search-suggestions" id="suggestionsBox"></div>    
       </div>    
-      <div class="auth-box left-auth">  
-        <button onclick="openLoginModal()">Login</button>  
-        <button onclick="openSignupModal()">Sign Up</button>  
-      <div class="digital-clock" style="color: white; font-size: 13px; line-height: 1.4; text-align: center;">  
-  <div id="digitalTime">🕒 Loading...</div>  
-  <div id="digitalDate">📅 Loading...</div>  
-</div>  
-    </div>  
-  </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">  
-    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">  
-      <span onclick="closeLoginModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>  
-      <h3 style="margin-top:0; color:#0077cc; text-align:center;">🔐 লগইন করুন</h3>  
-      <form>  
-        <label>👤 ফোন নাম্বার / ইমেইল:</label><br>  
-        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
-        <label>🔑 পাসওয়ার্ড:</label><br>  
-        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>  
-        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">🔓 Login</button>  
-      </form>  
-    </div>  
-  </div>  <!-- Signup Modal -->  <div id="signupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">  
-    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">  
-      <span onclick="closeSignupModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>  
-      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✅ সাইন আপ করুন</h3>  
-      <form>  
-        <label>🧑 নাম:</label><br>  
-        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
-        <label>📧 ইমেইল / ফোন নাম্বার:</label><br>  
-        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
-        <label>🔐 পাসওয়ার্ড:</label><br>  
-        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>  
-        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>  
-      </form>  
-    </div>  
-  </div>  <!-- JavaScript --><script>  
-  function openMessageModal() {  
-    document.getElementById("messageModal").style.display = "flex";  
-  }  
-  function closeMessageModal() {  
-    document.getElementById("messageModal").style.display = "none";  
-  }  
-  function openLoginModal() {  
-    document.getElementById("loginModal").style.display = "flex";  
-  }  
-  function closeLoginModal() {  
-    document.getElementById("loginModal").style.display = "none";  
-  }  
-  function openSignupModal() {  
-    document.getElementById("signupModal").style.display = "flex";  
-  }  
-  function closeSignupModal() {  
-    document.getElementById("signupModal").style.display = "none";  
-  }  
+      <div class="auth-box left-auth">
+        <button onclick="openLoginModal()">Login</button>
+        <button onclick="openSignupModal()">Sign Up</button>
+      </div>
+    </div>
+  </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeLoginModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">🔐 লগইন করুন</h3>
+      <form>
+        <label>👤 ফোন নাম্বার / ইমেইল:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>🔑 পাসওয়ার্ড:</label><br>
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">🔓 Login</button>
+      </form>
+    </div>
+  </div>  <!-- Signup Modal -->  <div id="signupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeSignupModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✅ সাইন আপ করুন</h3>
+      <form>
+        <label>🧑 নাম:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>📧 ইমেইল / ফোন নাম্বার:</label><br>
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+        <label>🔐 পাসওয়ার্ড:</label><br>
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>
+      </form>
+    </div>
+  </div>  <!-- JavaScript --><script>
+  function openMessageModal() {
+    document.getElementById("messageModal").style.display = "flex";
+  }
+  function closeMessageModal() {
+    document.getElementById("messageModal").style.display = "none";
+  }
+  function openLoginModal() {
+    document.getElementById("loginModal").style.display = "flex";
+  }
+  function closeLoginModal() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+  function openSignupModal() {
+    document.getElementById("signupModal").style.display = "flex";
+  }
+  function closeSignupModal() {
+    document.getElementById("signupModal").style.display = "none";
+  }
+
+  // ✅ Success Message Functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    // Signup Form
+    const signupForm = document.querySelector("#signupModal form");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");
+        signupForm.reset();
+        closeSignupModal();
+      });
+    }
+
+    // Login Form
+    const loginForm = document.querySelector("#loginModal form");
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("🔓 সফলভাবে লগইন হয়েছে!");
+        loginForm.reset();
+        closeLoginModal();
+      });
+    }
+  });
+</script></body>
+</html>
+  </header>  
   
-  // ✅ Success Message Functionality  
-  document.addEventListener("DOMContentLoaded", function () {  
-    const signupForm = document.querySelector("#signupModal form");  
-    if (signupForm) {  
-      signupForm.addEventListener("submit", function (e) {  
-        e.preventDefault();  
-        alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");  
-        signupForm.reset();  
-        closeSignupModal();  
-      });  
-    }  
-  
-    const loginForm = document.querySelector("#loginModal form");  
-    if (loginForm) {  
-      loginForm.addEventListener("submit", function (e) {  
-        e.preventDefault();  
-        alert("🔓 সফলভাবে লগইন হয়েছে!");  
-        loginForm.reset();  
-        closeLoginModal();  
-      });  
-    }  
-  });  
-</script> <!-- ✅ এইটা বাদ পড়েছিল -->  
-  
-<!-- তারপর ঘড়ির জন্য আলাদা স্ক্রিপ্ট -->  
-<script>  
-  function updateDigitalClock() {  
-    const now = new Date();  
-  
-    const optionsTime = {  
-      hour: '2-digit',  
-      minute: '2-digit',  
-      hour12: true  
-    };  
-  
-    const optionsDate = {  
-      day: '2-digit',  
-      month: '2-digit',  
-      year: 'numeric',  
-      weekday: 'long'  
-    };  
-  
-    const timeStr = now.toLocaleTimeString('en-US', optionsTime);  
-    const dateStr = now.toLocaleDateString('en-GB', optionsDate);  
-  
-    document.getElementById('digitalTime').textContent = '🕒 ' + timeStr;  
-    document.getElementById('digitalDate').textContent = '📅 ' + dateStr;  
-  }  
-  
-  setInterval(updateDigitalClock, 1000);  
-  updateDigitalClock();  
-</script>  
-  
-</body>  
-</html></body>  
+    <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+    <a href="#">🏠 হোম | Home</a><div class="dropdown">
+  <a href="#">📂 ক্যাটাগরি | Categories</a>
+  <div class="dropdown-content">
+    <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>
+    <a href="fashion.html">👕 পোশাক</a>
+    <a href="hardware.html">🛠️ হার্ডওয়্যার</a>
+    <a href="medicine.html">💊 ঔষধ ও স্বাস্থ্যসেবা</a>
+    <a href="home.html">🏠 হোম ও কিচেন</a>
+    <a href="baby.html">🧸 বাচ্চাদের জিনিস</a>
+    <a href="education.html">📚 শিক্ষা ও বই</a>
+    <a href="grocery.html">🍱 খাবার ও মুদি</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <a href="#">📞 যোগাযোগ | Contact ▾</a>
+  <div class="dropdown-content">
+    <a href="https://youtube.com/@m2vai" target="_blank">🔔 Subscribe (YouTube)</a>
+    <a href="https://facebook.com/m2vaipage" target="_blank">📘 Facebook</a>
+    <a href="https://instagram.com/m2vai380" target="_blank">📸 Instagram</a>
+    <a href="https://x.com/m2vai380" target="_blank">🐦 Twitter (X)</a>
+    <a href="https://threads.com/@m2vai380" target="_blank">💬 Threads</a>
+    <a href="mailto:info.m2vai380@gmail.com">📩 Email</a>
+    <a href="#" onclick="openMessageModal()">✉️ সরাসরি মেসেজ পাঠান</a>
+  </div>
+</div>
+
+<a href="#">ℹ️ আমাদের সম্পর্কে | About</a>
+
+  </nav>  <!-- Message Modal -->  <div id="messageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
+      <span onclick="closeMessageModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✉️ সরাসরি মেসেজ পাঠান</h3>
+      <form>
+        <label for="modalName">নাম:</label><br>
+        <input type="text" id="modalName" name="modalName" required style="width:100%; padding:8px; margin-bottom:10px;"><br><label for="modalEmail">ইমেইল / মোবাইল:</label><br>
+    <input type="text" id="modalEmail" name="modalEmail" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+
+    <label for="modalMessage">মেসেজ:</label><br>
+    <textarea id="modalMessage" name="modalMessage" rows="4" required style="width:100%; padding:8px; margin-bottom:10px;"></textarea><br>
+
+    <label for="modalPhoto">ছবি যুক্ত করুন:</label><br>
+    <input type="file" id="modalPhoto" name="modalPhoto" accept="image/*" style="margin-bottom:10px;"><br>
+
+    <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">📤 পাঠান</button>
+  </form>
+</div>
+
+  </div>  <!-- Rest of the page content remains unchanged -->  <script>
+    function openMessageModal() {
+      document.getElementById("messageModal").style.display = "flex";
+    }
+    function closeMessageModal() {
+      document.getElementById("messageModal").style.display = "none";
+    }
+  </script></body>
 </html>  
-  </header>    
-    
-    <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">  
-    <a href="#">🏠 হোম | Home</a><div class="dropdown">  
-  <a href="#">📂 ক্যাটাগরি | Categories</a>  
-  <div class="dropdown-content">  
-    <a href="electronics.html">🔌 ইলেকট্রনিক্স</a>  
-    <a href="fashion.html">👕 পোশাক</a>  
-    <a href="hardware.html">🛠️ হার্ডওয়্যার</a>  
-    <a href="medicine.html">💊 ঔষধ ও স্বাস্থ্যসেবা</a>  
-    <a href="home.html">🏠 হোম ও কিচেন</a>  
-    <a href="baby.html">🧸 বাচ্চাদের জিনিস</a>  
-    <a href="education.html">📚 শিক্ষা ও বই</a>  
-    <a href="grocery.html">🍱 খাবার ও মুদি</a>  
+  </nav>  
+  
+  <div class="live-headline">  
+    <marquee  
+      behavior="scroll"  
+      direction="left"  
+      scrollamount="6"  
+      onmouseover="this.stop()"  
+      onmouseout="this.start()"  
+    >  
+      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order now from M2Vai Shop! 🔥  
+    </marquee>  
   </div>  
-</div>  
   
-<div class="dropdown">  
-  <a href="#">📞 যোগাযোগ | Contact ▾</a>  
-  <div class="dropdown-content">  
-    <a href="https://youtube.com/@m2vai" target="_blank">🔔 Subscribe (YouTube)</a>  
-    <a href="https://facebook.com/m2vaipage" target="_blank">📘 Facebook</a>  
-    <a href="https://instagram.com/m2vai380" target="_blank">📸 Instagram</a>  
-    <a href="https://x.com/m2vai380" target="_blank">🐦 Twitter (X)</a>  
-    <a href="https://threads.com/@m2vai380" target="_blank">💬 Threads</a>  
-    <a href="mailto:info.m2vai380@gmail.com">📩 Email</a>  
-    <a href="#" onclick="openMessageModal()">✉️ সরাসরি মেসেজ পাঠান</a>  
-  </div>  
-</div>  
-  
-<a href="#">ℹ️ আমাদের সম্পর্কে | About</a>  
-  
-  </nav>  <!-- Message Modal -->  <div id="messageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">  
-    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">  
-      <span onclick="closeMessageModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>  
-      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✉️ সরাসরি মেসেজ পাঠান</h3>  
-      <form>  
-        <label for="modalName">নাম:</label><br>  
-        <input type="text" id="modalName" name="modalName" required style="width:100%; padding:8px; margin-bottom:10px;"><br><label for="modalEmail">ইমেইল / মোবাইল:</label><br>  
-    <input type="text" id="modalEmail" name="modalEmail" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
-  
-    <label for="modalMessage">মেসেজ:</label><br>  
-    <textarea id="modalMessage" name="modalMessage" rows="4" required style="width:100%; padding:8px; margin-bottom:10px;"></textarea><br>  
-  
-    <label for="modalPhoto">ছবি যুক্ত করুন:</label><br>  
-    <input type="file" id="modalPhoto" name="modalPhoto" accept="image/*" style="margin-bottom:10px;"><br>  
-  
-    <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">📤 পাঠান</button>  
-  </form>  
-</div>  
-  
-  </div>  <!-- Rest of the page content remains unchanged -->  <script>  
-    function openMessageModal() {  
-      document.getElementById("messageModal").style.display = "flex";  
-    }  
-    function closeMessageModal() {  
-      document.getElementById("messageModal").style.display = "none";  
-    }  
-  </script></body>  
-</html>    
-  </nav>    
+  <section class="hero">  
+    <h1>Welcome to M2Vai Shop</h1>  
+    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place!</p>  
     
-  <div class="live-headline">    
-    <marquee    
-      behavior="scroll"    
-      direction="left"    
-      scrollamount="6"    
-      onmouseover="this.stop()"    
-      onmouseout="this.start()"    
-    >    
-      🔥 আজকের স্পেশাল অফার! সকল ফ্যান এবং ফ্রিজে ২০% পর্যন্ত ছাড়। Hurry up! Order now from M2Vai Shop! 🔥    
-    </marquee>    
-  </div>    
-    
-  <section class="hero">    
-    <h1>Welcome to M2Vai Shop</h1>    
-    <p>সবকিছু একসাথে, এক জায়গায় | Everything in one place!</p>    
-      
-  <section class="discounts">    
-    <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>    
-    <div class="product-grid" id="productGrid">    
-      <div class="product" data-name="ফ্যান" data-name-en="fan" data-link="#">    
-        <img src="fan.jpg" alt="Fan" />    
-        <p>টেবিল ফ্যান - ১৫% ছাড়</p>    
-      </div>    
-      <div class="product" data-name="ফ্রিজ" data-name-en="fridge" data-link="#">    
-        <img src="Samsung fridge.jpg" alt="Fridge" />    
-        <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>    
-      </div>    
-      <div class="product" data-name="চার্জার" data-name-en="charger" data-link="#">    
-        <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />    
-        <p>ফাস্ট চার্জার - ২০% ছাড়</p>    
-      </div>    
-    </div>    
-  </section>    
-    
-  <section class="reviews">    
-    <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>    
-    <blockquote>    
-      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম    
-    </blockquote>    
-    <blockquote> "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ </blockquote>    
-  </section>    
-    
-  <footer>    
-    © ২০২৫ M2Vai Shop | Developer by M2Vai💙    
-    <section class="social-media">    
-      <a href="https://facebook.com/m2vai" target="_blank" class="facebook"    
-        ><i class="fab fa-facebook-f"></i    
-      ></a>    
-      <a href="https://youtube.com/@m2vai" target="_blank" class="youtube"    
-        ><i class="fab fa-youtube"></i    
-      ></a>    
-      <a href="https://instagram.com/m2vai" target="_
+  <section class="discounts">  
+    <h2>💥 ডিসকাউন্ট প্রোডাক্টস | Discounted Products</h2>  
+    <div class="product-grid" id="productGrid">  
+      <div class="product" data-name="ফ্যান" data-name-en="fan" data-link="#">  
+        <img src="fan.jpg" alt="Fan" />  
+        <p>টেবিল ফ্যান - ১৫% ছাড়</p>  
+      </div>  
+      <div class="product" data-name="ফ্রিজ" data-name-en="fridge" data-link="#">  
+        <img src="Samsung fridge.jpg" alt="Fridge" />  
+        <p>স্যামসাং ফ্রিজ - ১০% ছাড়</p>  
+      </div>  
+      <div class="product" data-name="চার্জার" data-name-en="charger" data-link="#">  
+        <img src="https://via.placeholder.com/150x100?text=Charger" alt="Charger" />  
+        <p>ফাস্ট চার্জার - ২০% ছাড়</p>  
+      </div>  
+    </div>  
+  </section>  
+  
+  <section class="reviews">  
+    <h2>💬 ক্রেতাদের মতামত | Customer Feedback</h2>  
+    <blockquote>  
+      "সত্যিই দারুন সার্ভিস! পণ্য খুব তাড়াতাড়ি হাতে পেয়েছি। ধন্যবাদ M2Vai Shop!" – মেহেদী, চট্টগ্রাম  
+    </blockquote>  
+    <blockquote> "অনেক ভালো প্রোডাক্ট। আমি আবার অর্ডার করবো।" – রুবেল, নারায়ণগঞ্জ </blockquote>  
+  </section>  
+  
+  <footer>  
+    © ২০২৫ M2Vai Shop | Developer by M2Vai💙  
+    <section class="social-media">  
+      <a href="https://facebook.com/m2vai" target="_blank" class="facebook"  
+        ><i class="fab fa-facebook-f"></i  
+      ></a>  
+      <a href="https://youtube.com/@m2vai" target="_blank" class="youtube"  
+        ><i class="fab fa-youtube"></i  
+      ></a>  
+      <a href="https://instagram.com/m2vai" target="_blank" class="instagram"  
+        ><i class="fab fa-instagram"></i  
+      ></a>  
+      <a href="https://www.threads.com/@m2vai380" target="_blank" class="threads"  
+        ><i class="fab fa-threads"></i  
+      ></a>  
+      <a href="https://www.x.com/m2vai380" target="_blank" class="x"  
+        ><i class="fab fa-x-twitter"></i  
+      ></a>  
+      <a href="mailto:m2vai380@gmail.com" class="gmail"  
+        ><i class="fas fa-envelope"></i  
+      ></a>  
+    </section>  
+    <div class="footer-links">  
+      <a href="#">Privacy Policy</a> |  
+      <a href="#">Terms & Conditions</a> |  
+      <a href="#">Refund Policy</a>  
+    </div>  
+  </footer>  
+  
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsBox = document.getElementById("suggestionsBox");
+
+  const products = Array.from(document.querySelectorAll(".discounts .product")).map(
+    (product) => ({
+      nameBn: product.getAttribute("data-name")?.toLowerCase() || "",
+      nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
+      imgSrc: product.querySelector("img").src,
+      alt: product.querySelector("img").alt,
+      link: product.getAttribute("data-link") || "#",
+      displayName: product.querySelector("p").textContent,
+    })
+  );
+
+  searchInput.addEventListener("input", function () {
+    const query
