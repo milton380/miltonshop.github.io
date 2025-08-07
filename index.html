@@ -362,11 +362,113 @@ top: 45px;
         <button>🔍</button>    
         <div class="search-suggestions" id="suggestionsBox"></div>    
       </div>    
-      <div class="auth-box left-auth">    
-        <button>Login</button>    
-        <button>Sign Up</button>    
-      </div>    
-    </div>    
+      <div class="auth-box left-auth">  
+        <button onclick="openLoginModal()">Login</button>  
+        <button onclick="openSignupModal()">Sign Up</button>  
+      <div class="digital-clock" style="color: white; font-size: 13px; line-height: 1.4; text-align: center;">  
+  <div id="digitalTime">🕒 Loading...</div>  
+  <div id="digitalDate">📅 Loading...</div>  
+</div>  
+    </div>  
+  </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">  
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">  
+      <span onclick="closeLoginModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>  
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">🔐 লগইন করুন</h3>  
+      <form>  
+        <label>👤 ফোন নাম্বার / ইমেইল:</label><br>  
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
+        <label>🔑 পাসওয়ার্ড:</label><br>  
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>  
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">🔓 Login</button>  
+      </form>  
+    </div>  
+  </div>  <!-- Signup Modal -->  <div id="signupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">  
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">  
+      <span onclick="closeSignupModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>  
+      <h3 style="margin-top:0; color:#0077cc; text-align:center;">✅ সাইন আপ করুন</h3>  
+      <form>  
+        <label>🧑 নাম:</label><br>  
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
+        <label>📧 ইমেইল / ফোন নাম্বার:</label><br>  
+        <input type="text" required style="width:100%; padding:8px; margin-bottom:10px;"><br>  
+        <label>🔐 পাসওয়ার্ড:</label><br>  
+        <input type="password" required style="width:100%; padding:8px; margin-bottom:15px;"><br>  
+        <button type="submit" style="padding:10px 20px; background-color:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer;">✅ Sign Up</button>  
+      </form>  
+    </div>  
+  </div>  <!-- JavaScript --><script>  
+  function openMessageModal() {  
+    document.getElementById("messageModal").style.display = "flex";  
+  }  
+  function closeMessageModal() {  
+    document.getElementById("messageModal").style.display = "none";  
+  }  
+  function openLoginModal() {  
+    document.getElementById("loginModal").style.display = "flex";  
+  }  
+  function closeLoginModal() {  
+    document.getElementById("loginModal").style.display = "none";  
+  }  
+  function openSignupModal() {  
+    document.getElementById("signupModal").style.display = "flex";  
+  }  
+  function closeSignupModal() {  
+    document.getElementById("signupModal").style.display = "none";  
+  }  // ✅ Success Message Functionality
+document.addEventListener("DOMContentLoaded", function () {
+// Signup Form
+const signupForm = document.querySelector("#signupModal form");
+if (signupForm) {
+signupForm.addEventListener("submit", function (e) {
+e.preventDefault();
+alert("✅ সফলভাবে সাইন আপ সম্পন্ন হয়েছে!");
+signupForm.reset();
+closeSignupModal();
+});
+}
+
+// Login Form  
+const loginForm = document.querySelector("#loginModal form");  
+if (loginForm) {  
+  loginForm.addEventListener("submit", function (e) {  
+    e.preventDefault();  
+    alert("🔓 সফলভাবে লগইন হয়েছে!");  
+    loginForm.reset();  
+    closeLoginModal();  
+  });  
+}
+
+});
+
+<script>  
+  function updateDigitalClock() {  
+    const now = new Date();  
+  
+    const optionsTime = {  
+      hour: '2-digit',  
+      minute: '2-digit',  
+      hour12: true  
+    };  
+  
+    const optionsDate = {  
+      day: '2-digit',  
+      month: '2-digit',  
+      year: 'numeric',  
+      weekday: 'long'  
+    };  
+  
+    const timeStr = now.toLocaleTimeString('en-US', optionsTime);  
+    const dateStr = now.toLocaleDateString('en-GB', optionsDate);  
+  
+    document.getElementById('digitalTime').textContent = '🕒 ' + timeStr;  
+    document.getElementById('digitalDate').textContent = '📅 ' + dateStr;  
+  }  
+  
+  setInterval(updateDigitalClock, 1000);  
+  updateDigitalClock();  
+</script>  </body>  
+</html></body>  
+</html>  
   </header>    <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">  
 <a href="#">🏠 হোম | Home</a><div class="dropdown">
 
@@ -490,48 +592,4 @@ top: 45px;
         nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",    
         imgSrc: product.querySelector("img").src,    
         alt: product.querySelector("img").alt,    
-        link: product.getAttribute("data-link") || "#",    
-        displayName: product.querySelector("p").textContent,    
-      })    
-    );    
-    
-    searchInput.addEventListener("input", function () {    
-      const query = this.value.trim().toLowerCase();    
-    
-      if (!query) {    
-        suggestionsBox.innerHTML = "";    
-        suggestionsBox.classList.remove("visible");    
-        return;    
-      }    
-    
-      const matchedProducts = products.filter(    
-        (p) => p.nameBn.includes(query) || p.nameEn.includes(query)    
-      );    
-    
-      if (matchedProducts.length === 0) {    
-        suggestionsBox.innerHTML = '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';    
-        suggestionsBox.classList.add("visible");    
-        return;    
-      }    
-    
-      suggestionsBox.innerHTML = matchedProducts    
-        .map(    
-          (p) => `    
-        <a href="${p.link}" class="search-suggestion-item" tabindex="0">    
-          <img src="${p.imgSrc}" alt="${p.alt}" />    
-          <span>${p.displayName}</span>    
-        </a>    
-      `    
-        )    
-        .join("");    
-      suggestionsBox.classList.add("visible");    
-    });    
-    
-    // ক্লিক করলে সাজেশন বক্স বন্ধ হবে    
-    document.addEventListener("click", function (e) {    
-      if (!e.target.closest(".search-box")) {    
-        suggestionsBox.classList.remove("visible");    
-      }    
-    });    
-  </script>    </body>    
-</html>
+        link: product.getAttribute("data-li
