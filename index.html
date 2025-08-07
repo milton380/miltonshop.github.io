@@ -439,6 +439,55 @@
       });
     }
   });
+
+  const products = [
+    { name: "স্যামসাং ফোন", image: "images/brands/samsung.png", url: "samsung.html" },
+    { name: "শাওমি ফোন", image: "images/brands/xiaomi.png", url: "xiaomi.html" },
+    { name: "ভিভো ফোন", image: "images/brands/vivo.png", url: "vivo.html" },
+    { name: "ওয়ালটন ফ্যান", image: "images/electronics/fan.png", url: "fan.html" },
+    { name: "স্মার্ট টিভি", image: "images/electronics/tv.png", url: "tv.html" },
+    { name: "রেফ্রিজারেটর", image: "images/electronics/fridge.png", url: "fridge.html" }
+  ];
+
+  const input = document.getElementById("searchInput");
+  const suggestionsBox = document.getElementById("suggestionsBox");
+
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestionsBox.innerHTML = "";
+
+    if (query === "") {
+      suggestionsBox.style.display = "none";
+      return;
+    }
+
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+    
+    if (filtered.length === 0) {
+      suggestionsBox.innerHTML = `<div class="no-result">❌ কোন প্রোডাক্ট পাওয়া যায়নি</div>`;
+    } else {
+      filtered.forEach(product => {
+        const div = document.createElement("div");
+        div.classList.add("suggestion-item");
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <span>${product.name}</span>
+        `;
+        div.onclick = () => {
+          window.location.href = product.url;
+        };
+        suggestionsBox.appendChild(div);
+      });
+    }
+
+    suggestionsBox.style.display = "block";
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!suggestionsBox.contains(e.target) && e.target !== input) {
+      suggestionsBox.style.display = "none";
+    }
+  });
 </script></body>
 </html>
   </header>  
