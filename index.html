@@ -353,7 +353,57 @@
         top: 45px;    
       }    
     }    
-  </style>    
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+#searchInput {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.suggestions {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 9999;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.suggestions.visible {
+  display: block;
+}
+
+.suggestions a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.suggestions a:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestions img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+</style>    
 </head>    
 <body>    
   <header>    
