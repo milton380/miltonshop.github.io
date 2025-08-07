@@ -353,7 +353,25 @@
         top: 45px;    
       }    
     }    
-  </style>    
+  <style>
+  .datetime-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+    font-size: 14px;
+    color: white;
+  }
+
+  #clock {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  #date {
+    font-size: 14px;
+  }
+</style>    
 </head>    
 <body>    
   <header>    
@@ -363,7 +381,10 @@
         <input type="text" placeholder="সার্চ করুন | Search" id="searchInput" autocomplete="off" />    
         <button>🔍</button>    
         <div class="search-suggestions" id="suggestionsBox"></div>    
-      </div>    
+      <div class="datetime-box">
+    <div id="clock"></div>
+    <div id="date"></div>
+</div>    
       <div class="auth-box left-auth">
         <button onclick="openLoginModal()">Login</button>
         <button onclick="openSignupModal()">Sign Up</button>
@@ -439,6 +460,25 @@
       });
     }
   });
+<script>
+  function updateClock() {
+    const now = new Date();
+    const clock = document.getElementById('clock');
+    const date = document.getElementById('date');
+
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+    const dateStr = now.toLocaleDateString('en-GB', options);
+
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
+    date.textContent = dateStr;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
 </script></body>
 </html>
   </header>  
