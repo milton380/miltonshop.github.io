@@ -353,75 +353,23 @@
         top: 45px;    
       }    
     }    
-  <style>
-  <style>
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .search-box input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  .search-box button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    margin-left: 5px;
-    cursor: pointer;
-  }
-
-  .date-time-box {
-    font-weight: bold;
-    margin: 5px 10px;
-    color: #000;
-  }
-
-  .auth-box button {
-    padding: 6px 12px;
-    margin-left: 5px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .auth-box button:hover {
-    background-color: #218838;
-  }
-</style>
-
-<header>
-  <h1>M2Vai Shop</h1>
-  <div class="header-right">
-
-    <!-- 🔍 সার্চ বক্স -->
-    <div class="search-box" style="position: relative;">
-      <input type="text" placeholder="সার্চ করুন | Search" id="searchInput" autocomplete="off" />
-      <button>🔍</button>
-      <div class="search-suggestions" id="suggestionsBox"></div>
+  </style>    
+</head>    
+<body>    
+  <header>    
+    <h1>M2Vai Shop</h1>    
+    <div class="header-right">    
+      <div class="search-box" style="position: relative;">    
+        <input type="text" placeholder="সার্চ করুন | Search" id="searchInput" autocomplete="off" />    
+        <button>🔍</button>    
+        <div class="search-suggestions" id="suggestionsBox"></div>    
+      </div>    
+      <div class="auth-box left-auth">
+        <button onclick="openLoginModal()">Login</button>
+        <button onclick="openSignupModal()">Sign Up</button>
+      </div>
     </div>
-
-    <!-- 📅 তারিখ ও সময় -->
-    <div class="date-time-box" id="dateTimeBox"></div>
-
-    <!-- 🔐 Login/Signup বাটন -->
-    <div class="auth-box">
-      <button onclick="openLoginModal()">Login</button>
-      <button onclick="openSignupModal()">Sign Up</button>
-    </div>
-
-  </div>
-</header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+  </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
     <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
       <span onclick="closeLoginModal()" style="position:absolute; top:10px; right:15px; font-size:18px; cursor:pointer; color:#333;">&times;</span>
       <h3 style="margin-top:0; color:#0077cc; text-align:center;">🔐 লগইন করুন</h3>
@@ -491,17 +439,6 @@
       });
     }
   });
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = now.toLocaleDateString('en-US', options);
-    const formattedTime = now.toLocaleTimeString('en-US');
-    document.getElementById('dateTimeBox').innerHTML = formattedDate + ' | ' + formattedTime;
-  }
-
-  setInterval(updateDateTime, 1000);
-  updateDateTime();
 </script></body>
 </html>
   </header>  
@@ -562,36 +499,7 @@
     function closeMessageModal() {
       document.getElementById("messageModal").style.display = "none";
     }
-  <script>
-  // 🔁 তারিখ ও সময় চালানো
-  function updateDateTime() {
-    const now = new Date();
-    const formatted = now.toLocaleString('bn-BD', {
-      weekday: 'short',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    });
-    document.getElementById('dateTimeBox').innerText = formatted;
-  }
-
-  setInterval(updateDateTime, 1000);
-  updateDateTime();
-
-  // 🔐 Login Modal
-  function openLoginModal() {
-    alert("Login Modal Open (এখানে আসল Modal বসাতে হবে)");
-  }
-
-  // 🔐 Signup Modal
-  function openSignupModal() {
-    alert("Signup Modal Open (এখানে আসল Modal বসাতে হবে)");
-  }
-</script></body>
+  </script></body>
 </html>  
   </nav>  
   
