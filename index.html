@@ -368,11 +368,6 @@
         <button onclick="openLoginModal()">Login</button>
         <button onclick="openSignupModal()">Sign Up</button>
       </div>
-
-      <!-- 🕒 এখানে সময়-তারিখ বসানো হয়েছে -->
-      <div id="dateTime" style="color: white; margin-left: 15px; font-weight: bold;"></div>
-
-    </div>
     </div>
   </header>  <!-- Navigation and content stay unchanged -->  <!-- Login Modal -->  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
     <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%; position:relative;">
@@ -587,85 +582,4 @@
         ><i class="fas fa-envelope"></i  
       ></a>  
     </section>  
-    <div class="footer-links">  
-      <a href="#">Privacy Policy</a> |  
-      <a href="#">Terms & Conditions</a> |  
-      <a href="#">Refund Policy</a>  
-    </div>  
-  </footer>  
-  
-  <script>
-  const searchInput = document.getElementById("searchInput");
-  const suggestionsBox = document.getElementById("suggestionsBox");
-
-  const products = Array.from(document.querySelectorAll(".discounts .product")).map(
-    (product) => ({
-      nameBn: product.getAttribute("data-name")?.toLowerCase() || "",
-      nameEn: product.getAttribute("data-name-en")?.toLowerCase() || "",
-      imgSrc: product.querySelector("img").src,
-      alt: product.querySelector("img").alt,
-      link: product.getAttribute("data-link") || "#",
-      displayName: product.querySelector("p").textContent,
-    })
-  );
-
-  searchInput.addEventListener("input", function () {
-    const query = this.value.trim().toLowerCase();
-
-    if (!query) {
-      suggestionsBox.innerHTML = "";
-      suggestionsBox.classList.remove("visible");
-      return;
-    }
-
-    const matchedProducts = products.filter(
-      (p) => p.nameBn.includes(query) || p.nameEn.includes(query)
-    );
-
-    if (matchedProducts.length === 0) {
-      suggestionsBox.innerHTML =
-        '<div style="padding: 10px; color: #999;">কোনো প্রোডাক্ট পাওয়া যায়নি</div>';
-      suggestionsBox.classList.add("visible");
-      return;
-    }
-
-    suggestionsBox.innerHTML = matchedProducts
-      .map(
-        (p) => `
-        <a href="${p.link}" class="suggestion-item" style="display:flex; align-items:center; padding:10px; text-decoration:none; border-bottom:1px solid #eee;">
-          <img src="${p.imgSrc}" alt="${p.alt}" style="width:40px; height:40px; object-fit:cover; margin-right:10px;">
-          <span>${p.displayName}</span>
-        </a>
-      `
-      )
-      .join("");
-
-    suggestionsBox.classList.add("visible");
-  });
-
-  // Hide suggestions when clicking outside
-  document.addEventListener("click", function (e) {
-    if (!suggestionsBox.contains(e.target) && e.target !== searchInput) {
-      suggestionsBox.classList.remove("visible");
-    }
-  });
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    const options = {
-      weekday: 'short',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    };
-    const formatted = now.toLocaleString('en-US', options);
-    document.getElementById('dateTime').innerText = formatted;
-  }
-
-  setInterval(updateDateTime, 1000);
-  updateDateTime();
-</script>
+    <div cla
