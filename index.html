@@ -649,4 +649,23 @@
       suggestionsBox.classList.remove("visible");
     }
   });
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+    const formatted = now.toLocaleString('en-US', options);
+    document.getElementById('dateTime').innerText = formatted;
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
 </script>
